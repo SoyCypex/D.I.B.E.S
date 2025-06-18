@@ -30,13 +30,13 @@
       </PasswordField>
       <Button layoutX="446.0" layoutY="640.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Iniciar" textAlignment="CENTER">
          <font>
-            <Font size="40.0" />
+            <Font name="Arial Bold" size="40.0" />
          </font>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
       <Button layoutX="1055.0" layoutY="911.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="354.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Pantalla principal" textAlignment="CENTER">
          <font>
-            <Font size="32.0" />
+            <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1125.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />

@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="177.0" layoutY="847.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="150.0" layoutY="875.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1113.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
       <Text layoutX="456.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido Administrador">
@@ -17,58 +17,58 @@
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Text>
-      <Button layoutX="526.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" mnemonicParsing="false" text="Becarios">
+      <Button layoutX="526.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Becarios">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="80.0" layoutX="448.0" layoutY="435.0" stroke="BLACK" strokeType="INSIDE" />
-      <Text fill="WHITE" layoutX="57.0" layoutY="929.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="57.0" layoutY="943.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="57.0" layoutY="963.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="57.0" layoutY="986.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Text>
-      <Button layoutX="126.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" mnemonicParsing="false" text="Registro">
+      <Button layoutX="126.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Registro">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="126.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" mnemonicParsing="false" text="Modificar">
+      <Button layoutX="126.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Modificar">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="126.0" layoutY="630.0" minHeight="80.0" minWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" mnemonicParsing="false" text="Faltas">
+      <Button layoutX="126.0" layoutY="630.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Faltas">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="526.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" mnemonicParsing="false" text="Asistencias">
+      <Button layoutX="526.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Asistencias">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="526.0" layoutY="630.0" minHeight="80.0" minWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" mnemonicParsing="false" text="Encargados">
+      <Button layoutX="526.0" layoutY="630.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Encargados">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="926.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" mnemonicParsing="false" text="Retardos">
+      <Button layoutX="926.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Retardos">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="926.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" mnemonicParsing="false" text="Eliminar">
+      <Button layoutX="926.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Eliminar">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="926.0" layoutY="630.0" minHeight="80.0" minWidth="360.0" style="-fx-background-color: #B73122; -fx-text-fill: white;" mnemonicParsing="false" text="Salir">
+      <Button layoutX="926.0" layoutY="630.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" text="Salir">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
