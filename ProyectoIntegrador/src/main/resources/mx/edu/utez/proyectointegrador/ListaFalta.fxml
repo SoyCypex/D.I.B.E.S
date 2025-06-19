@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.utez.edu.fxa.InterfazMori">
+   <children>
+   
+       <!-- Header -->
+       <HBox alignment="CENTER" minHeight="80" style="-fx-background-color: #00796B;">
+           <padding>
+               <Insets bottom="10" left="20" right="20" top="10" />
+           </padding>
+      <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Desktop/Nueva%20carpeta/D.I.B.E.S/ProyectoIntegrador/src/main/resources/mx/edu/utez/proyectointegrador/Images/utezlogo.png" />
+               </image></ImageView>
+              <Region HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Desktop/Nueva%20carpeta/D.I.B.E.S/ProyectoIntegrador/src/main/resources/mx/edu/utez/proyectointegrador/Images/CDSlogo.jpg" />
+               </image></ImageView>
+      </children>
+       </HBox>
+   
+       <!-- Título -->
+       <Label alignment="CENTER" maxWidth="Infinity" style="-fx-font-size: 28px; -fx-font-weight: bold;" text="Lista de faltas">
+           <padding>
+               <Insets bottom="20" top="20" />
+           </padding>
+       </Label>
+   
+       <!-- Barra de búsqueda -->
+       <VBox alignment="CENTER" spacing="10">
+           <padding>
+               <Insets bottom="20" left="20" right="20" top="10" />
+           </padding>
+           <children>
+               <TextField promptText="Buscar..." style="-fx-font-size: 14px;" />
+               <Button style="-fx-background-color: d9d9d9; -fx-text-fill: black; -fx-font-size: 14px;" text="Buscar" />
+           </children>
+       </VBox>
+   
+       <!-- Tabla de retardos -->
+       <TableView style="-fx-font-size: 14px;" VBox.vgrow="ALWAYS">
+           <columnResizePolicy>
+               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+           </columnResizePolicy>
+           <columns>
+               <TableColumn minWidth="100" text="Matrícula" />
+               <TableColumn minWidth="200" text="Nombre" />
+               <TableColumn minWidth="150" text="ID_Falta" />
+               <TableColumn minWidth="150" text="Fecha de falta" />
+           </columns>
+           <VBox.margin>
+               <Insets left="20" right="20" />
+           </VBox.margin>
+       </TableView>
+   
+       <!-- Menú inferior -->
+       <HBox minHeight="60" style="-fx-background-color: rgb(14, 146, 118);">
+           <padding>
+               <Insets bottom="10" left="20" right="10" top="10" />
+           </padding>
+           <children>
+               <Region HBox.hgrow="ALWAYS" />
+               <Button prefHeight="37.0" prefWidth="176.0" style="-fx-background-color: rgb(43, 107, 194); -fx-font-size: 14px;" text="Menu" textFill="WHITE" />
+           </children>
+       </HBox>
+   </children>
+
+</VBox>
