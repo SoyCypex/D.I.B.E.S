@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <Rectangle fill="#13a583" height="181.0" layoutY="851.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1440.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1112.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
+        <Button layoutX="1055.0" layoutY="911.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="354.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Administrador" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="32.0" />
+            </font>
+        </Button>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1125.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
+        <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="1158.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Images/CDSlogo.jpg" />
+            </image></ImageView>
+        <ImageView fitHeight="122.0" fitWidth="236.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Images/utezlogo.png" />
+            </image></ImageView>
+      <ImageView fitHeight="41.0" fitWidth="45.0" layoutX="33.0" layoutY="951.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/telefono.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="45.0" layoutX="32.0" layoutY="898.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/email.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="95.0" layoutY="915.0" prefHeight="30.0" prefWidth="790.0" text="Palo Escrito, 62765 Emiliano Zapata, Mor." textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="956.0" prefHeight="30.0" prefWidth="736.0" text="777 368 1165" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="890.0" prefHeight="30.0" prefWidth="790.0" text="Dirección: Av. Universidad Tecnológica 1, " textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="584.0" layoutY="261.0" text="HORA" textAlignment="CENTER" textFill="#245c93">
+         <font>
+            <Font name="System Bold" size="96.0" />
+         </font>
+      </Label>
+      <Label layoutX="662.0" layoutY="373.0" text="FECHA" textAlignment="CENTER" textFill="#4477a9">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="532.0" layoutY="445.0" text="BECARIO" textAlignment="CENTER" textFill="#042f5d">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <Label layoutX="640.0" layoutY="557.0" text="INGRESO" textAlignment="CENTER" textFill="#042f5d">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
