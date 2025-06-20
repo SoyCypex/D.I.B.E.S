@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.FormularioRegistro">
+<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
@@ -18,38 +19,15 @@
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font></Text>
-      <TextField layoutX="621.0" layoutY="267.0" prefHeight="38.0" prefWidth="407.0" />
-      <TextField layoutX="621.0" layoutY="609.0" prefHeight="38.0" prefWidth="407.0" />
-      <TextField layoutX="621.0" layoutY="379.0" prefHeight="38.0" prefWidth="407.0" />
-      <TextField layoutX="620.0" layoutY="499.0" prefHeight="38.0" prefWidth="407.0" />
-      <Text layoutX="621.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula:">
+      <TextField layoutX="625.0" layoutY="229.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" />
+      <Text layoutX="595.0" layoutY="644.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escanea la primera huella en el dispositivo:">
          <font>
-            <Font name="Arial" size="24.0" />
+            <Font name="Arial" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="621.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre(s):">
+      <Button layoutX="732.0" layoutY="950.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
          <font>
-            <Font name="Arial" size="24.0" />
-         </font>
-      </Text>
-      <Text layoutX="621.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido Paterno:">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text layoutX="621.0" layoutY="605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido Materno:">
-         <font>
-            <Font name="Arial" size="24.0" />
-         </font>
-      </Text>
-      <Text layoutX="635.0" layoutY="688.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Int. tu huella digital en el dispositivo">
-         <font>
-            <Font name="Arial" size="24.0" />
-         </font>
-      </Text>
-      <Button layoutX="725.0" layoutY="842.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrarse">
-         <font>
-            <Font size="32.0" />
+            <Font name="Arial Bold" size="32.0" />
          </font></Button>
       <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="33.0" layoutY="13.0">
          <image>
@@ -61,14 +39,78 @@
             <Image url="@Images/CDSlogo.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="83.0" fitWidth="111.0" layoutX="877.0" layoutY="725.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/huelladigital.png" />
-         </image></ImageView>
-      <ImageView fitHeight="83.0" fitWidth="111.0" layoutX="690.0" layoutY="725.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/huelladigital.png" />
-         </image>
-      </ImageView>
+      <TextField layoutX="624.0" layoutY="509.0" prefHeight="35.0" prefWidth="400.0" promptText="Carrera" />
+      <TextField layoutX="625.0" layoutY="369.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Paterno" />
+      <TextField layoutX="624.0" layoutY="439.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Materno" />
+      <TextField layoutX="624.0" layoutY="299.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre" />
+      <TextField layoutX="624.0" layoutY="579.0" prefHeight="35.0" prefWidth="400.0" promptText="Cuatrimestre" />
+      <Text layoutX="595.0" layoutY="676.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escanea la segunda huella en el dispositivo:">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="625.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la matricula:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="625.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el nombre:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="625.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el apellido paterno:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="625.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el apellido materno:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="625.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la carrera:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="623.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese cuatrimestre:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="905.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escaneo completo">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="905.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escaneo completo">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+      <TextField layoutX="620.0" layoutY="714.0" prefHeight="35.0" prefWidth="400.0" promptText="Hora de entrada" />
+      <TextField layoutX="620.0" layoutY="789.0" prefHeight="35.0" prefWidth="400.0" promptText="Hora de salida" />
+      <Text layoutX="620.0" layoutY="711.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de entrada:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="620.0" layoutY="786.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de salida:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <DatePicker layoutX="711.0" layoutY="871.0" />
+      <Text layoutX="620.0" layoutY="866.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Button layoutX="1260.0" layoutY="917.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: WHITE;" text="Menu">
+         <font>
+            <Font name="Arial Bold" size="32.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
