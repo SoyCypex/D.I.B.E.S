@@ -20,7 +20,7 @@
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1112.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1125.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-        <Text layoutX="559.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de retardos" textAlignment="CENTER">
+        <Text layoutX="586.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de faltas" textAlignment="CENTER">
             <font>
                 <Font name="Arial Bold" size="40.0" />
             </font>
@@ -36,11 +36,10 @@
         </Button>
         <TableView layoutX="124.0" layoutY="368.0" prefHeight="400.0" prefWidth="1191.0">
             <columns>
-                <TableColumn prefWidth="238.0" text="Matricula" />
-                <TableColumn minWidth="9.0" prefWidth="238.0" text="Num_retardo" />
-                <TableColumn prefWidth="238.0" text="Fecha_retardo" />
-                <TableColumn prefWidth="238.0" text="Hora de ingreso" />
-            <TableColumn prefWidth="238.0" text="Tiempo de retardo" />
+                <TableColumn prefWidth="301.1999969482422" text="Matricula" />
+                <TableColumn minWidth="9.0" prefWidth="291.5999755859375" text="Nombre" />
+                <TableColumn prefWidth="298.5999755859375" text="ID_Falta" />
+                <TableColumn prefWidth="298.4000122070313" text="Fecha de falta" />
             </columns>
         </TableView>
         <ImageView fitHeight="122.0" fitWidth="236.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
