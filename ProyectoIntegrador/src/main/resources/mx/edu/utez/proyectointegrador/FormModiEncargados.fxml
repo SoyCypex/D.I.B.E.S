@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="391.0" layoutX="16.0" layoutY="66.0" stroke="BLACK" strokeType="INSIDE" width="469.0" />
+      <Text layoutX="128.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificacion">
+         <font>
+            <Font name="Arial Bold" size="40.0" />
+         </font></Text>
+      <TextField layoutX="51.0" layoutY="120.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" text="Nombre Completo" />
+      <Button layoutX="158.0" layoutY="481.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Modificar">
+         <font>
+            <Font name="Arial Bold" size="32.0" />
+         </font></Button>
+      <TextField layoutX="50.0" layoutY="400.0" prefHeight="35.0" prefWidth="400.0" promptText="Carrera" text="Hora" />
+      <TextField layoutX="51.0" layoutY="260.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Paterno" text="ejemplo@utez.edu.mx" />
+      <TextField layoutX="50.0" layoutY="330.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Materno" text="Maestro" />
+      <TextField layoutX="50.0" layoutY="190.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre" text="Telefono/Celular" />
+      <Text layoutX="51.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puesto">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora entrada">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

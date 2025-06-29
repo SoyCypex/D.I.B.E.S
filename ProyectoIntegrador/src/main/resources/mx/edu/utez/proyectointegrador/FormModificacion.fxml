@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
@@ -15,17 +14,17 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1320.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1333.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="742.0" layoutX="518.0" layoutY="195.0" stroke="BLACK" strokeType="INSIDE" width="612.0" />
-      <Text layoutX="743.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro">
+      <Text layoutX="702.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificacion">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font></Text>
       <TextField layoutX="625.0" layoutY="229.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" />
-      <Text layoutX="595.0" layoutY="644.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escanea la primera huella en el dispositivo:">
+      <Text layoutX="595.0" layoutY="644.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escanea nueva huella en el dispositivo:">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Text>
-      <Button layoutX="732.0" layoutY="950.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
+      <Button layoutX="724.0" layoutY="951.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Modificar">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font></Button>
@@ -44,37 +43,37 @@
       <TextField layoutX="624.0" layoutY="439.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Materno" />
       <TextField layoutX="624.0" layoutY="299.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre" />
       <TextField layoutX="624.0" layoutY="579.0" prefHeight="35.0" prefWidth="400.0" promptText="Cuatrimestre" />
-      <Text layoutX="595.0" layoutY="676.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escanea la segunda huella en el dispositivo:">
+      <Text layoutX="595.0" layoutY="676.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escanea 2da nueva huella en el dispositivo:">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="625.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la matricula:">
+      <Text layoutX="625.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="625.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el nombre:">
+      <Text layoutX="625.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificar nombre:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="625.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el apellido paterno:">
+      <Text layoutX="625.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificar apellido paterno:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="625.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el apellido materno:">
+      <Text layoutX="625.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificar apellido materno:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="625.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la carrera:">
+      <Text layoutX="625.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificar carrera:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="623.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese cuatrimestre:">
+      <Text layoutX="623.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificar cuatrimestre:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
@@ -91,18 +90,18 @@
       </Text>
       <TextField layoutX="620.0" layoutY="714.0" prefHeight="35.0" prefWidth="400.0" promptText="Hora de entrada" />
       <TextField layoutX="620.0" layoutY="789.0" prefHeight="35.0" prefWidth="400.0" promptText="Hora de salida" />
-      <Text layoutX="620.0" layoutY="711.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de entrada:">
+      <Text layoutX="620.0" layoutY="711.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva hora de entrada:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="620.0" layoutY="786.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de salida:">
+      <Text layoutX="620.0" layoutY="786.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva hora de salida:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
       <DatePicker layoutX="711.0" layoutY="871.0" />
-      <Text layoutX="620.0" layoutY="866.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
+      <Text layoutX="620.0" layoutY="866.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva fecha de finalizacion:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
