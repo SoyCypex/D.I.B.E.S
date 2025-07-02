@@ -12,15 +12,15 @@
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font></Text>
-      <TextField layoutX="51.0" layoutY="120.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" text="Nombre Completo" />
-      <Button layoutX="158.0" layoutY="481.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
+      <TextField layoutX="51.0" layoutY="120.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre Completo" />
+      <Button layoutX="167.0" layoutY="469.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Guardar">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font></Button>
-      <TextField layoutX="50.0" layoutY="400.0" prefHeight="35.0" prefWidth="400.0" promptText="Carrera" text="Hora" />
-      <TextField layoutX="51.0" layoutY="260.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Paterno" text="ejemplo@utez.edu.mx" />
-      <TextField layoutX="50.0" layoutY="330.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Materno" text="Maestro" />
-      <TextField layoutX="50.0" layoutY="190.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre" text="Telefono/Celular" />
+      <TextField layoutX="50.0" layoutY="400.0" prefHeight="35.0" prefWidth="400.0" promptText="7:00" />
+      <TextField layoutX="51.0" layoutY="260.0" prefHeight="35.0" prefWidth="400.0" promptText="ejemplo@utez.edu.mx" />
+      <TextField layoutX="50.0" layoutY="330.0" prefHeight="35.0" prefWidth="400.0" promptText="Maestro" />
+      <TextField layoutX="50.0" layoutY="190.0" prefHeight="35.0" prefWidth="400.0" promptText="Telefono/Celular" />
       <Text layoutX="51.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
          <font>
             <Font name="Arial Bold" size="15.0" />

@@ -37,10 +37,11 @@
         <TableView layoutX="124.0" layoutY="368.0" prefHeight="400.0" prefWidth="1191.0">
             <columns>
                 <TableColumn prefWidth="238.0" text="Matricula" />
-                <TableColumn minWidth="9.0" prefWidth="238.0" text="Num_retardo" />
-                <TableColumn prefWidth="238.0" text="Fecha_retardo" />
-                <TableColumn prefWidth="238.0" text="Hora de ingreso" />
-            <TableColumn prefWidth="238.0" text="Tiempo de retardo" />
+                <TableColumn minWidth="9.0" prefWidth="151.0" text="Num_retardo" />
+                <TableColumn prefWidth="249.0" text="Fecha_retardo" />
+                <TableColumn prefWidth="209.0" text="Hora de ingreso" />
+            <TableColumn prefWidth="189.0" text="Tiempo de retardo" />
+            <TableColumn prefWidth="160.0" text="Justificado" />
             </columns>
         </TableView>
         <ImageView fitHeight="122.0" fitWidth="236.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
@@ -55,5 +56,10 @@
             <image>
                 <Image url="@Images/search.png" />
             </image></ImageView>
+      <Button layoutX="650.0" layoutY="784.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Justificar">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

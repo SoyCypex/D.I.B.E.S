@@ -38,8 +38,9 @@
             <columns>
                 <TableColumn prefWidth="301.1999969482422" text="Matricula" />
                 <TableColumn minWidth="9.0" prefWidth="291.5999755859375" text="Nombre" />
-                <TableColumn prefWidth="298.5999755859375" text="ID_Falta" />
-                <TableColumn prefWidth="298.4000122070313" text="Fecha de falta" />
+                <TableColumn prefWidth="184.0" text="ID_Falta" />
+                <TableColumn prefWidth="234.0" text="Fecha de falta" />
+            <TableColumn prefWidth="180.0" text="Justificada" />
             </columns>
         </TableView>
         <ImageView fitHeight="122.0" fitWidth="236.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
@@ -54,5 +55,10 @@
             <image>
                 <Image url="@Images/search.png" />
             </image></ImageView>
+      <Button layoutX="649.0" layoutY="789.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Justificar">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

@@ -73,7 +73,7 @@
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="623.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese cuatrimestre:">
+      <Text layoutX="623.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese cuatrimestre actual:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
@@ -100,16 +100,22 @@
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <DatePicker layoutX="711.0" layoutY="871.0" />
-      <Text layoutX="620.0" layoutY="866.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
+      <DatePicker layoutX="883.0" layoutY="872.0" />
+      <Text layoutX="883.0" layoutY="858.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Button layoutX="1260.0" layoutY="917.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: WHITE;" text="Menu">
+      <Button layoutX="1260.0" layoutY="917.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: WHITE;" text="Becarios">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
+      <Text layoutX="624.0" layoutY="858.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de información:">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Text>
+      <TextField layoutX="576.0" layoutY="870.0" prefHeight="35.0" prefWidth="288.0" promptText="Ingrese ultimos 3 digitos de la matricula" />
    </children>
 </AnchorPane>
