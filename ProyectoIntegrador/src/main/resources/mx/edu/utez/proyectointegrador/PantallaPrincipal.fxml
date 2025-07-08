@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
       <Rectangle fill="#13a583" height="181.0" layoutY="855.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1440.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
@@ -62,15 +63,20 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <Label layoutX="532.0" layoutY="445.0" text="BECARIO" textAlignment="CENTER" textFill="#042f5d">
-         <font>
-            <Font size="96.0" />
-         </font>
-      </Label>
-      <Label layoutX="549.0" layoutY="557.0" text="HORA DE INGRESO" textAlignment="CENTER" textFill="#042f5d">
+      <Label layoutX="623.0" layoutY="439.0" text="REGISTRAR" textAlignment="CENTER" textFill="#042f5d">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
+      <Button layoutX="546.0" layoutY="518.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="354.0" style="-fx-background-color: #13a583; -fx-text-fill: white;" text="Entrada" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="32.0" />
+         </font>
+      </Button>
+      <Button layoutX="546.0" layoutY="621.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="354.0" style="-fx-background-color: #13a583; -fx-text-fill: white;" text="Salida" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="32.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

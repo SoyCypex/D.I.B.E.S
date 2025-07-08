@@ -34,15 +34,16 @@
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <TableView layoutX="124.0" layoutY="368.0" prefHeight="400.0" prefWidth="1191.0">
+      <TableView layoutX="12.0" layoutY="368.0" prefHeight="400.0" prefWidth="1416.0">
         <columns>
-          <TableColumn prefWidth="170.0" text="Matricula" />
-          <TableColumn prefWidth="170.0" text="Nombre" />
-            <TableColumn prefWidth="170.0" text="Carrera" />
-            <TableColumn prefWidth="170.0" text="Cuatrimestre_Actual" />
-            <TableColumn prefWidth="170.0" text="Hora_entrada" />
-            <TableColumn prefWidth="170.0" text="Hora_salida" />
-            <TableColumn prefWidth="170.0" text="Fecha_finalizacion" />
+          <TableColumn prefWidth="169.0" text="Matricula" />
+          <TableColumn prefWidth="273.0" text="Nombre" />
+            <TableColumn prefWidth="180.0" text="Carrera" />
+            <TableColumn prefWidth="180.0" text="Cuatrimestre_Actual" />
+            <TableColumn prefWidth="151.0" text="Hora_entrada" />
+            <TableColumn prefWidth="120.0" text="Hora_salida" />
+            <TableColumn prefWidth="206.0" text="Fecha_finalizacion" />
+            <TableColumn prefWidth="136.0" text="ID_Encargado" />
         </columns>
       </TableView>
       <ImageView fitHeight="122.0" fitWidth="236.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">

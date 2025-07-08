@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="616.0" prefWidth="662.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="527.0" layoutX="31.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1f2f3" height="125.0" layoutX="31.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+        <Text layoutX="134.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese credenciales" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="40.0" />
+            </font>
+        </Text>
+        <TextField layoutX="57.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="550.0" promptText="Usuario">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </TextField>
+        <PasswordField layoutX="57.0" layoutY="296.0" prefHeight="50.0" prefWidth="550.0" promptText="Contraseña">
+            <font>
+                <Font name="Arial" size="30.0" />
+            </font>
+        </PasswordField>
+        <Button layoutX="57.0" layoutY="396.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Registrar" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="40.0" />
+            </font>
+        </Button>
+      <Button layoutX="225.0" layoutY="561.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: white;" text="Recuperar contraseña">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font></Button>
+    </children>
+</AnchorPane>

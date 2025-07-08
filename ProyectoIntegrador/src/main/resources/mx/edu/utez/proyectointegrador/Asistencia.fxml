@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="150.0" layoutY="874.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
@@ -35,10 +36,11 @@
         </Button>
         <TableView layoutX="124.0" layoutY="368.0" prefHeight="400.0" prefWidth="1191.0">
             <columns>
-                <TableColumn prefWidth="301.1999969482422" text="Matricula" />
-                <TableColumn minWidth="9.0" prefWidth="291.5999755859375" text="Nombre" />
-                <TableColumn prefWidth="298.5999755859375" text="Horarios" />
-                <TableColumn prefWidth="298.4000122070313" text="Hora de registro" />
+                <TableColumn prefWidth="181.0" text="Num_Asistencia" />
+                <TableColumn minWidth="9.0" prefWidth="209.0" text="Matricula" />
+                <TableColumn prefWidth="271.0" text="Fecha" />
+                <TableColumn prefWidth="283.0" text="Hora de entrada" />
+            <TableColumn prefWidth="246.0" text="Hora de salida" />
             </columns>
         </TableView>
         <ImageView fitHeight="122.0" fitWidth="236.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
