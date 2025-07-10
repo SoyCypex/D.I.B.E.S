@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="985.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="985.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="828.0" layoutX="29.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="612.0" />
       <Text layoutX="213.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificacion">
@@ -66,8 +64,8 @@
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <DatePicker layoutX="313.0" layoutY="794.0" />
-      <Text layoutX="144.0" layoutY="814.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
+      <DatePicker layoutX="314.0" layoutY="803.0" />
+      <Text layoutX="144.0" layoutY="821.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
@@ -78,20 +76,20 @@
          </font>
       </Text>
       <TextField layoutX="132.0" layoutY="484.0" prefHeight="35.0" prefWidth="400.0" promptText="Ingrese ultimos 3 digitos de la matricula" />
-      <Text layoutX="133.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:">
+      <TextField layoutX="131.0" layoutY="687.0" prefHeight="35.0" prefWidth="400.0" promptText="Minimo 15 caracteres" />
+      <Text layoutX="134.0" layoutY="684.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField layoutX="131.0" layoutY="682.0" prefHeight="35.0" prefWidth="400.0" promptText="Usar matricula de preferencia" />
-      <TextField layoutX="133.0" layoutY="748.0" prefHeight="35.0" prefWidth="400.0" promptText="Minimo 15 caracteres" />
-      <Text layoutX="134.0" layoutY="745.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:">
+      <TextField layoutX="129.0" layoutY="852.0" prefHeight="35.0" prefWidth="400.0" promptText="1" />
+      <Text layoutX="131.0" layoutY="848.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de encargado:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField layoutX="132.0" layoutY="851.0" prefHeight="35.0" prefWidth="400.0" promptText="1" />
-      <Text layoutX="134.0" layoutY="847.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de encargado:">
+      <TextField layoutX="129.0" layoutY="753.0" prefHeight="35.0" prefWidth="400.0" promptText="Sin espacios" />
+      <Text layoutX="125.0" layoutY="749.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono celular:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

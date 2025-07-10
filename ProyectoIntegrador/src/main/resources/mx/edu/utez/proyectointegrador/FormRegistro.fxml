@@ -13,13 +13,13 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1320.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1333.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="828.0" layoutX="518.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" width="612.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="828.0" layoutX="528.0" layoutY="118.0" stroke="BLACK" strokeType="INSIDE" width="612.0" />
       <Text fill="WHITE" layoutX="739.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font></Text>
       <TextField layoutX="620.0" layoutY="144.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" />
-      <Button layoutX="733.0" layoutY="951.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
+      <Button layoutX="732.0" layoutY="954.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font></Button>
@@ -80,8 +80,8 @@
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <DatePicker layoutX="792.0" layoutY="836.0" />
-      <Text layoutX="617.0" layoutY="856.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
+      <DatePicker layoutX="795.0" layoutY="838.0" />
+      <Text layoutX="624.0" layoutY="856.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
@@ -97,20 +97,20 @@
          </font>
       </Text>
       <TextField layoutX="621.0" layoutY="525.0" prefHeight="35.0" prefWidth="400.0" promptText="Ingrese ultimos 3 digitos de la matricula" />
-      <Text layoutX="620.0" layoutY="720.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese un nombre de usuario:">
+      <TextField layoutX="621.0" layoutY="730.0" prefHeight="35.0" prefWidth="400.0" promptText="Minimo 15 caracteres" />
+      <Text layoutX="618.0" layoutY="727.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cree una contraseña:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField layoutX="620.0" layoutY="723.0" prefHeight="35.0" prefWidth="400.0" promptText="Usar matricula de preferencia" />
-      <TextField layoutX="622.0" layoutY="789.0" prefHeight="35.0" prefWidth="400.0" promptText="Minimo 15 caracteres" />
-      <Text layoutX="620.0" layoutY="786.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cree una contraseña:">
+      <TextField layoutX="621.0" layoutY="890.0" prefHeight="35.0" prefWidth="400.0" promptText="1" />
+      <Text layoutX="622.0" layoutY="886.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de encargado:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField layoutX="621.0" layoutY="892.0" prefHeight="35.0" prefWidth="400.0" promptText="1" />
-      <Text layoutX="620.0" layoutY="888.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de encargado:">
+      <TextField layoutX="621.0" layoutY="789.0" prefHeight="35.0" prefWidth="400.0" promptText="Sin espacios" />
+      <Text layoutX="622.0" layoutY="786.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono celular:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
