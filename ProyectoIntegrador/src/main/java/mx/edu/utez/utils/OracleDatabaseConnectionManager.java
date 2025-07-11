@@ -55,4 +55,17 @@ public class OracleDatabaseConnectionManager {
         }
         return dataSource.getConnection();
     }
+    //Para saber si la conexion se hizo
+    public static void main(String[] args){
+        try (Connection conn = OracleDatabaseConnectionManager.getConnection()) {
+            if (conn != null && !conn.isClosed()) {
+                System.out.println("Conexión a la base de datos exitosa.");
+            } else {
+                System.out.println("La conexión es nula o está cerrada.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al intentar conectar a la base de datos:");
+            e.printStackTrace();
+        }
+    }
 }
