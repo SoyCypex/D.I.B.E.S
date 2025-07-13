@@ -1,16 +1,19 @@
 package mx.edu.utez.proyectointegrador.modelo;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 public class Asistencia {
     private int numRegistro;
-    private Alumno alumno;
-    private String fecha;
-    private String horaEntrada;
-    private String horaSalida;
+    private String matricula;
+    private Date fecha;
+    private Timestamp horaEntrada;
+    private Timestamp horaSalida;
     //Constructores
     public Asistencia() {}
-    public Asistencia(int numRegistro, Alumno alumno, String fecha, String horaEntrada, String horaSalida) {
+    public Asistencia(int numRegistro, String matricula, Date fecha, Timestamp horaEntrada, Timestamp horaSalida) {
         this.numRegistro = numRegistro;
-        this.alumno = alumno;
+        this.matricula = matricula;
         this.fecha = fecha;
         this.horaEntrada = horaEntrada;
         this.horaSalida = horaSalida;
@@ -23,31 +26,31 @@ public class Asistencia {
         this.numRegistro = numRegistro;
     }
     //Matricula
-    public Alumno getAlumno() {
-        return alumno;
+    public String getMatricula() {
+        return matricula;
     }
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
     //Fecha de asistencia
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
     //Hora de entrada
-    public String getHoraEntrada() {
+    public Timestamp getHoraEntrada() {
         return horaEntrada;
     }
-    public void setHoraEntrada(String horaEntrada) {
+    public void setHoraEntrada(Timestamp horaEntrada) {
         this.horaEntrada = horaEntrada;
     }
     //Hora de salida
-    public String getHoraSalida() {
+    public Timestamp getHoraSalida() {
         return horaSalida;
     }
-    public void setHoraSalida(String horaSalida) {
+    public void setHoraSalida(Timestamp horaSalida) {
         this.horaSalida = horaSalida;
     }
 }

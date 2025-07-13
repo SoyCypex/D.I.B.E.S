@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="150.0" layoutY="875.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
@@ -18,7 +17,7 @@
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Text>
-      <Button layoutX="526.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Becarios">
+      <Button layoutX="126.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Becarios">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
@@ -34,32 +33,27 @@
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Text>
-      <Button layoutX="126.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Registro">
-         <font>
-            <Font name="Arial Bold" size="32.0" />
-         </font>
-      </Button>
       <Button layoutX="126.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Faltas">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="526.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Asistencias">
+      <Button layoutX="526.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Asistencias">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="933.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Encargados">
+      <Button layoutX="933.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Encargados">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="926.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Retardos">
+      <Button layoutX="526.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Retardos">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="1041.0" layoutY="910.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" text="Salir">
+      <Button layoutX="933.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" text="Salir">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>

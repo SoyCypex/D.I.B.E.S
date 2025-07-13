@@ -12,7 +12,7 @@ public class AlumnoDao {
     public boolean createAlumno(Alumno a){
         //Obtener la conexion
         //Preparar el sql statement
-        String query = "INSERT INTO ALUMNOS (MATRICULA, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, CARRERA, CUATRIMESTRE_ACTUAL, CONTRASENIA, TELEFONO) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO ALUMNOS (MATRICULA, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, CARRERA, CUATRIMESTRE_ACTUAL, CONTRASENIA, TELEFONO, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try{
             Connection connection = OracleDatabaseConnectionManager.getConnection();
             PreparedStatement ps = connection .prepareStatement(query);
@@ -24,6 +24,10 @@ public class AlumnoDao {
             ps.setString(6, a.getCuatrimestreActual());
             ps.setString(7, a.getContrasenia());
             ps.setString(8, a.getTelefono());
+            ps.setTimestamp(9, a.getHoraEntrada());
+            ps.setTimestamp(10, a.getHoraSalida());
+            ps.setDate(11, a.getFechaFinalizacion());
+            ps.setInt(12, a.getIdEncargado());
             int resultado  = ps.executeUpdate();
             if(resultado>0){
                 connection.close();
@@ -38,7 +42,7 @@ public class AlumnoDao {
 
     //Funcion de Lectura (R) del CRUD
     public List<Alumno> readAlumnos(){
-        String query = "SELECT  * FROM ALUMNOS ORDER BY NOMBRE ASC";
+        String query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS ORDER BY MATRICULA ASC";
         List<Alumno> lista = new ArrayList<>();
         try{
             Connection conn = OracleDatabaseConnectionManager.getConnection();
@@ -48,12 +52,12 @@ public class AlumnoDao {
                 Alumno a = new Alumno();
                 a.setMatricula(rs.getString("MATRICULA"));
                 a.setNombre(rs.getString("NOMBRE"));
-                a.setApellidoPaterno(rs.getString("APELLIDO_PATERNO"));
-                a.setApellidoMaterno(rs.getString("APELLIDO_MATERNO"));
-                a.setCarrera(rs.getString("CARRERA"));
+                a.setApellidoPaterno(rs.getString("CARRERA"));
                 a.setCuatrimestreActual(rs.getString("CUATRIMESTRE_ACTUAL"));
-                a.setContrasenia(rs.getString("CONTRASENIA"));
-                a.setTelefono(rs.getString("TELEFONO"));
+                a.setHoraEntrada(rs.getTimestamp("HORA_ENTRADA"));
+                a.setHoraSalida(rs.getTimestamp("HORA_SALIDA"));
+                a.setFechaFinalizacion(rs.getDate("FECHA_FINALIZACION"));
+                a.setIdEncargado(rs.getInt("ID_ENCARGADO"));
                 lista.add(a);
             }
             rs.close();
@@ -77,7 +81,7 @@ public class AlumnoDao {
     public boolean updateAlumno(String matricula, Alumno a){
         //Obtener la conexion
         //Preparar el sql statement
-        String query = "UPDATE ALUMNOS SET NOMBRE=?, APELLIDO_PATERNO=?, APELLIDO_MATERNO=?, CARRERA=?, CUATRIMESTRE_ACTUAL=?, CONTASENIA=?, TELEFONO=? WHERE MATRICULA=? ";
+        String query = "UPDATE ALUMNOS SET NOMBRE=?, APELLIDO_PATERNO=?, APELLIDO_MATERNO=?, CARRERA=?, CUATRIMESTRE_ACTUAL=?, CONTASENIA=?, TELEFONO=?, HORA_ENTRADA=?, HORA_SALIDA=?, FECHA_FINALIZACION=?, ID_ENCARGADO=? WHERE MATRICULA=? ";
         try{
             Connection conn = OracleDatabaseConnectionManager.getConnection();
             PreparedStatement ps = conn.prepareStatement(query);
@@ -88,7 +92,11 @@ public class AlumnoDao {
             ps.setString(5, a.getCuatrimestreActual());
             ps.setString(6, a.getContrasenia());
             ps.setString(7, a.getTelefono());
-            ps.setString(8, matricula); //Este es el WHERE MATRICULA=?
+            ps.setTimestamp(8, a.getHoraEntrada());
+            ps.setTimestamp(9, a.getHoraSalida());
+            ps.setDate(10, a.getFechaFinalizacion());
+            ps.setInt(11, a.getIdEncargado());
+            ps.setString(12, matricula); //Este es el WHERE MATRICULA=?
             int resultado  = ps.executeUpdate();
             if(resultado>0){
                 conn.close();

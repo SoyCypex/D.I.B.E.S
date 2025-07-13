@@ -1,15 +1,18 @@
 package mx.edu.utez.proyectointegrador.modelo;
 
+import java.sql.Timestamp;
+
 public class Falta {
    private int idFalta;
-   private Alumno alumno;
-   private String fechaFalta;
+   private String matricula;
+   private Timestamp fechaFalta;
    private String justificada;
    //Constructores
-    public Falta() {}
-    public Falta(int idFalta, Alumno alumno, String fechaFalta, String justificada) {
+    public Falta() {
+    }
+    public Falta(int idFalta, String matricula, Timestamp fechaFalta, String justificada) {
         this.idFalta = idFalta;
-        this.alumno = alumno;
+        this.matricula = matricula;
         this.fechaFalta = fechaFalta;
         this.justificada = justificada;
     }
@@ -21,17 +24,17 @@ public class Falta {
         this.idFalta = idFalta;
     }
     //Matricula
-    public Alumno getAlumno() {
-        return alumno;
+    public String getMatricula() {
+        return matricula;
     }
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
     //Fecha de la falta
-    public String getFechaFalta() {
+    public Timestamp getFechaFalta() {
         return fechaFalta;
     }
-    public void setFechaFalta(String fechaFalta) {
+    public void setFechaFalta(Timestamp fechaFalta) {
         this.fechaFalta = fechaFalta;
     }
     //La falta esta justificada?

@@ -1,5 +1,8 @@
 package mx.edu.utez.proyectointegrador.modelo;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 public class Alumno {
     private String matricula;
     private String nombre;
@@ -9,9 +12,13 @@ public class Alumno {
     private String cuatrimestreActual;
     private String contrasenia;
     private String telefono;
+    private Timestamp horaEntrada;
+    private Timestamp horaSalida;
+    private Date fechaFinalizacion;
+    private int idEncargado;
     //Constructores
     public Alumno() {}
-    public Alumno(String matricula, String nombre, String apellidoPaterno, String apellidoMaterno, String carrera, String cuatrimestreActual, String contrasenia, String telefono) {
+    public Alumno(String matricula, String nombre, String apellidoPaterno, String apellidoMaterno, String carrera, String cuatrimestreActual, String contrasenia, String telefono, Timestamp horaEntrada, Timestamp horaSalida, Date fechaFinalizacion, int idEncargado) {
         this.matricula = matricula;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -20,6 +27,10 @@ public class Alumno {
         this.cuatrimestreActual = cuatrimestreActual;
         this.contrasenia = contrasenia;
         this.telefono = telefono;
+        this.horaEntrada = horaEntrada;
+        this.horaSalida = horaSalida;
+        this.fechaFinalizacion = fechaFinalizacion;
+        this.idEncargado = idEncargado;
     }
     //Matricula
     public String getMatricula() {
@@ -76,5 +87,33 @@ public class Alumno {
     }
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+    //Hora entrada
+    public Timestamp getHoraEntrada() {
+        return horaEntrada;
+    }
+    public void setHoraEntrada(Timestamp horaEntrada) {
+        this.horaEntrada = horaEntrada;
+    }
+    //Hora salida
+    public Timestamp getHoraSalida() {
+        return horaSalida;
+    }
+    public void setHoraSalida(Timestamp horaSalida) {
+        this.horaSalida = horaSalida;
+    }
+    //Fecha finalizacion
+    public Date getFechaFinalizacion() {
+        return fechaFinalizacion;
+    }
+    public void setFechaFinalizacion(Date fechaFinalizacion) {
+        this.fechaFinalizacion = fechaFinalizacion;
+    }
+    //Id Encargado
+    public int getIdEncargado() {
+        return idEncargado;
+    }
+    public void setIdEncargado(int idEncargado) {
+        this.idEncargado = idEncargado;
     }
 }

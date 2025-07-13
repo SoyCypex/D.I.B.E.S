@@ -1,17 +1,20 @@
 package mx.edu.utez.proyectointegrador.modelo;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 public class Retardo {
     private int numRetardo;
-    private Alumno alumno;
-    private String fechaRetardo;
-    private String horaEntrada;
-    private String tiempoRetardo;
+    private String matricula;
+    private Date fechaRetardo;
+    private Timestamp horaEntrada;
+    private Timestamp tiempoRetardo;
     private String justificado;
     //Constructores
     public Retardo() {}
-    public Retardo(int numRetardo, Alumno alumno, String fechaRetardo, String horaEntrada, String tiempoRetardo, String justificado) {
+    public Retardo(int numRetardo, String matricula, Date fechaRetardo, Timestamp horaEntrada, Timestamp tiempoRetardo, String justificado) {
         this.numRetardo = numRetardo;
-        this.alumno = alumno;
+        this.matricula = matricula;
         this.fechaRetardo = fechaRetardo;
         this.horaEntrada = horaEntrada;
         this.tiempoRetardo = tiempoRetardo;
@@ -25,31 +28,31 @@ public class Retardo {
         this.numRetardo = numRetardo;
     }
     //Matricula
-    public Alumno getAlumno() {
-        return alumno;
+    public String getMatricula() {
+        return matricula;
     }
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
     //Fecha del retardo
-    public String getFechaRetardo() {
+    public Date getFechaRetardo() {
         return fechaRetardo;
     }
-    public void setFechaRetardo(String fechaRetardo) {
+    public void setFechaRetardo(Date fechaRetardo) {
         this.fechaRetardo = fechaRetardo;
     }
     //Hora de entrada
-    public String getHoraEntrada() {
+    public Timestamp getHoraEntrada() {
         return horaEntrada;
     }
-    public void setHoraEntrada(String horaEntrada) {
+    public void setHoraEntrada(Timestamp horaEntrada) {
         this.horaEntrada = horaEntrada;
     }
     //Tiempo de retardo
-    public String getTiempoRetardo() {
+    public Timestamp getTiempoRetardo() {
         return tiempoRetardo;
     }
-    public void setTiempoRetardo(String tiempoRetardo) {
+    public void setTiempoRetardo(Timestamp tiempoRetardo) {
         this.tiempoRetardo = tiempoRetardo;
     }
     //Esta justificado?

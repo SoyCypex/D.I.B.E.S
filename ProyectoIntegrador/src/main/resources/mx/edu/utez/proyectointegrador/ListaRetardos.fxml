@@ -55,7 +55,12 @@
             <image>
                 <Image url="@Images/search.png" />
             </image></ImageView>
-      <Button layoutX="650.0" layoutY="784.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Justificar">
+      <Button layoutX="1268.0" layoutY="818.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Registrar retardo">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="650.0" layoutY="787.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" text="Eliminar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
