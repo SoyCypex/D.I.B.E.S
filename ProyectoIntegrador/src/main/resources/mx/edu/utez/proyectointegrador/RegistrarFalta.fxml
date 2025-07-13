@@ -7,41 +7,35 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="391.0" layoutX="16.0" layoutY="66.0" stroke="BLACK" strokeType="INSIDE" width="469.0" />
-      <Text layoutX="114.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar falta">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="309.0" layoutX="16.0" layoutY="121.0" stroke="BLACK" strokeType="INSIDE" width="469.0" />
+      <Text layoutX="116.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar falta">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font></Text>
-      <TextField disable="true" layoutX="51.0" layoutY="120.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" />
-      <Button layoutX="158.0" layoutY="481.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
+      <TextField disable="true" layoutX="50.0" layoutY="158.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" />
+      <Button layoutX="158.0" layoutY="452.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font></Button>
-      <TextField layoutX="50.0" layoutY="400.0" prefHeight="35.0" prefWidth="400.0" promptText="Si/No" />
-      <TextField disable="true" layoutX="51.0" layoutY="260.0" prefHeight="35.0" prefWidth="400.0" promptText="1" />
-      <TextField disable="true" layoutX="50.0" layoutY="330.0" prefHeight="35.0" prefWidth="400.0" promptText="MM/DD/YY" />
-      <TextField disable="true" layoutX="50.0" layoutY="190.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre" />
-      <Text layoutX="51.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula">
+      <TextField layoutX="51.0" layoutY="363.0" prefHeight="35.0" prefWidth="400.0" promptText="Si/No" />
+      <TextField disable="true" layoutX="47.0" layoutY="295.0" prefHeight="35.0" prefWidth="400.0" promptText="MM/DD/YY" />
+      <TextField disable="true" layoutX="49.0" layoutY="228.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre" />
+      <Text layoutX="50.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
+      <Text layoutX="47.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID_Falta">
+      <Text layoutX="46.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de la falta">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de la falta">
-         <font>
-            <Font name="Arial Bold" size="15.0" />
-         </font>
-      </Text>
-      <Text layoutX="51.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Justificada?:">
+      <Text layoutX="50.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Justificada?:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

@@ -12,14 +12,13 @@ public class FaltaDao {
     public boolean createFalta(Falta f) {
         //Obtener la conexion
         //Preparar el sql statement
-        String query = "INSERT INTO LISTA_DE_FALTAS (ID_FALTA, MATRICULA, FECHA_DE_FALTA, JUSTIFICADA) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO LISTA_DE_FALTAS (MATRICULA, FECHA_DE_FALTA, JUSTIFICADA) VALUES (?, ?, ?)";
         try{
             Connection connection = OracleDatabaseConnectionManager.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setInt(1, f.getIdFalta());
-            ps.setString(2, f.getMatricula());
-            ps.setTimestamp(3, f.getFechaFalta());
-            ps.setString(4, f.getJustificada());
+            ps.setString(1, f.getMatricula());
+            ps.setTimestamp(2, f.getFechaFalta());
+            ps.setString(3, f.getJustificada());
             int resultado = ps.executeUpdate();
             if(resultado > 0){
                 connection.close();

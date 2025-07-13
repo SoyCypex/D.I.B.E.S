@@ -12,8 +12,7 @@ public class Retardo {
     private String justificado;
     //Constructores
     public Retardo() {}
-    public Retardo(int numRetardo, String matricula, Date fechaRetardo, Timestamp horaEntrada, Timestamp tiempoRetardo, String justificado) {
-        this.numRetardo = numRetardo;
+    public Retardo(String matricula, Date fechaRetardo, Timestamp horaEntrada, Timestamp tiempoRetardo, String justificado) {
         this.matricula = matricula;
         this.fechaRetardo = fechaRetardo;
         this.horaEntrada = horaEntrada;

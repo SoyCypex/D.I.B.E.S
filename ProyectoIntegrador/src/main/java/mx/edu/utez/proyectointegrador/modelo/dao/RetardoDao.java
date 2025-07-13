@@ -12,16 +12,15 @@ public class RetardoDao {
     public boolean createRetardo(Retardo r){
         //Obtener la conexion
         //Preparar el sql statement
-        String query = "INSERT INTO RETARDOS (NUM_RETARDO, MATRICULA, FECHA_RETARDO, HORA_DE_INGRESO, TIEMPO_DE_RETARDO, JUSTIFICADO) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO RETARDOS (MATRICULA, FECHA_RETARDO, HORA_DE_INGRESO, TIEMPO_DE_RETARDO, JUSTIFICADO) VALUES (?, ?, ?, ?, ?)";
         try{
             Connection connection = OracleDatabaseConnectionManager.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setInt(1, r.getNumRetardo());
-            ps.setString(2, r.getMatricula());
-            ps.setDate(3, r.getFechaRetardo());
-            ps.setTimestamp(4, r.getHoraEntrada());
-            ps.setTimestamp(5, r.getTiempoRetardo());
-            ps.setString(6, r.getJustificado());
+            ps.setString(1, r.getMatricula());
+            ps.setDate(2, r.getFechaRetardo());
+            ps.setTimestamp(3, r.getHoraEntrada());
+            ps.setTimestamp(4, r.getTiempoRetardo());
+            ps.setString(5, r.getJustificado());
             int resultado  = ps.executeUpdate();
             if(resultado>0){
                 connection.close();

@@ -11,8 +11,7 @@ public class Asistencia {
     private Timestamp horaSalida;
     //Constructores
     public Asistencia() {}
-    public Asistencia(int numRegistro, String matricula, Date fecha, Timestamp horaEntrada, Timestamp horaSalida) {
-        this.numRegistro = numRegistro;
+    public Asistencia(String matricula, Date fecha, Timestamp horaEntrada, Timestamp horaSalida) {
         this.matricula = matricula;
         this.fecha = fecha;
         this.horaEntrada = horaEntrada;

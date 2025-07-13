@@ -10,8 +10,7 @@ public class Falta {
    //Constructores
     public Falta() {
     }
-    public Falta(int idFalta, String matricula, Timestamp fechaFalta, String justificada) {
-        this.idFalta = idFalta;
+    public Falta(String matricula, Timestamp fechaFalta, String justificada) {
         this.matricula = matricula;
         this.fechaFalta = fechaFalta;
         this.justificada = justificada;

@@ -12,15 +12,14 @@ public class AsistenciaDao {
     public boolean createAsistencia(Asistencia as) {
         //Obtener la conexion
         //Preparar el sql statement
-        String query = "INSERT INTO LISTA_DE_ASISTENCIA (NUM_REGISTRO, MATRICULA, FECHA, HORA_ENTRADA, HORA_SALIDA) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO LISTA_DE_ASISTENCIA (MATRICULA, FECHA, HORA_ENTRADA, HORA_SALIDA) VALUES (?, ?, ?, ?)";
         try{
             Connection connection = OracleDatabaseConnectionManager.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setInt(1, as.getNumRegistro());
-            ps.setString(2, as.getMatricula());
-            ps.setDate(3, as.getFecha());
-            ps.setTimestamp(4, as.getHoraEntrada());
-            ps.setTimestamp(5, as.getHoraSalida());
+            ps.setString(1, as.getMatricula());
+            ps.setDate(2, as.getFecha());
+            ps.setTimestamp(3, as.getHoraEntrada());
+            ps.setTimestamp(4, as.getHoraSalida());
             int resultado = ps.executeUpdate();
             if (resultado > 0) {
                 connection.close();
