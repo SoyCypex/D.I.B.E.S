@@ -1,14 +1,16 @@
 package mx.edu.utez.proyectointegrador.modelo;
 
+import java.sql.Timestamp;
+
 public class Encargado {
     private int idEncargado;
     private String nombreCompleto;
     private String correo;
     private String puesto;
-    private String horaEntrada;
+    private Timestamp horaEntrada ;
     //Constructores
     public Encargado() {}
-    public Encargado(int idEncargado, String nombreCompleto, String correo, String puesto, String horaEntrada) {
+    public Encargado(int idEncargado, String nombreCompleto, String correo, String puesto, Timestamp horaEntrada) {
         this.idEncargado = idEncargado;
         this.nombreCompleto = nombreCompleto;
         this.correo = correo;
@@ -44,10 +46,11 @@ public class Encargado {
         this.puesto = puesto;
     }
     //Hora entrada
-    public String getHoraEntrada() {
+    public Timestamp getHoraEntrada() {
         return horaEntrada;
     }
-    public void setHoraEntrada(String horaEntrada) {
+    public void setHoraEntrada(Timestamp horaEntrada) {
         this.horaEntrada = horaEntrada;
     }
 }
+
