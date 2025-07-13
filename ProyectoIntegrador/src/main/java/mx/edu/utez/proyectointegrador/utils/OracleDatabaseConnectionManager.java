@@ -1,4 +1,4 @@
-package mx.edu.utez.utils;
+package mx.edu.utez.proyectointegrador.utils;
 
 import java.sql.Connection;
 import java.sql.SQLException;

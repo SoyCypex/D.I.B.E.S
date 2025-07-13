@@ -1,4 +1,4 @@
-package mx.edu.utez.modelo;
+package mx.edu.utez.proyectointegrador.modelo;
 
 public class Asistencia {
     private int numRegistro;
