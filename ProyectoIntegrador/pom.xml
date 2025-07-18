@@ -70,7 +70,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>mx.edu.utez.proyectointegrador/mx.edu.utez.proyectointegrador.HelloApplication
+                            <mainClass>mx.edu.utez.proyectointegrador/mx.edu.utez.proyectointegrador.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
