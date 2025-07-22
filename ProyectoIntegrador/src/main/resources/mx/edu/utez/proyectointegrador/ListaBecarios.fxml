@@ -10,7 +10,7 @@
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="150.0" layoutY="874.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
-      <Button layoutX="1054.0" layoutY="909.0" minHeight="80.0" minWidth="354.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Menu" textAlignment="CENTER">
+      <Button fx:id="botonMenu" layoutX="1054.0" layoutY="909.0" minHeight="80.0" minWidth="354.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Menu" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
@@ -24,25 +24,25 @@
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Text>
-      <TextField layoutX="455.0" layoutY="241.0" minHeight="35.0" minWidth="530.0">
+      <TextField fx:id="buscarBecario" layoutX="455.0" layoutY="241.0" minHeight="35.0" minWidth="530.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font></TextField>
-      <Button layoutX="650.0" layoutY="303.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #D9D9D9; -fx-text-fill: black;" text="Buscar">
+      <Button fx:id="botonBuscar" layoutX="650.0" layoutY="303.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #D9D9D9; -fx-text-fill: black;" text="Buscar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <TableView layoutX="12.0" layoutY="368.0" prefHeight="400.0" prefWidth="1416.0">
+      <TableView fx:id="tablaBecario" layoutX="12.0" layoutY="368.0" prefHeight="400.0" prefWidth="1416.0">
         <columns>
-          <TableColumn prefWidth="169.0" text="Matricula" />
-          <TableColumn prefWidth="273.0" text="Nombre" />
-            <TableColumn prefWidth="180.0" text="Carrera" />
-            <TableColumn prefWidth="180.0" text="Cuatrimestre_Actual" />
-            <TableColumn prefWidth="151.0" text="Hora_entrada" />
-            <TableColumn prefWidth="120.0" text="Hora_salida" />
-            <TableColumn prefWidth="206.0" text="Fecha_finalizacion" />
-            <TableColumn prefWidth="136.0" text="ID_Encargado" />
+          <TableColumn fx:id="tablaMatricula" prefWidth="169.0" text="Matricula" />
+          <TableColumn fx:id="tablaNombre" prefWidth="273.0" text="Nombre" />
+            <TableColumn fx:id="tablaCarrera" prefWidth="180.0" text="Carrera" />
+            <TableColumn fx:id="tablaCuatri" prefWidth="180.0" text="Cuatrimestre_Actual" />
+            <TableColumn fx:id="tablaEntrada" prefWidth="151.0" text="Hora_entrada" />
+            <TableColumn fx:id="tablaSalida" prefWidth="120.0" text="Hora_salida" />
+            <TableColumn fx:id="tablaFecha" prefWidth="206.0" text="Fecha_finalizacion" />
+            <TableColumn fx:id="tablaIden" prefWidth="136.0" text="ID_Encargado" />
         </columns>
       </TableView>
       <ImageView fitHeight="122.0" fitWidth="236.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
@@ -57,12 +57,12 @@
          <image>
             <Image url="@Images/search.png" />
          </image></ImageView>
-      <Button layoutX="650.0" layoutY="787.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" text="Eliminar">
+      <Button fx:id="eliminarBecario" layoutX="650.0" layoutY="787.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" text="Eliminar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="1268.0" layoutY="828.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Registrar">
+      <Button fx:id="abrirRegistrar" layoutX="1268.0" layoutY="828.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Registrar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
