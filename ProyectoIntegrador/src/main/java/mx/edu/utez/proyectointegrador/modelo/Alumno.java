@@ -1,7 +1,7 @@
 package mx.edu.utez.proyectointegrador.modelo;
 
 import java.sql.Date;
-import java.sql.Timestamp;
+import java.sql.Time;
 
 public class Alumno {
     private String matricula;
@@ -12,13 +12,13 @@ public class Alumno {
     private String cuatrimestreActual;
     private String contrasenia;
     private String telefono;
-    private Timestamp horaEntrada;
-    private Timestamp horaSalida;
+    private Time horaEntrada;
+    private Time horaSalida;
     private Date fechaFinalizacion;
     private int idEncargado;
     //Constructores
     public Alumno() {}
-    public Alumno(String matricula, String nombre, String apellidoPaterno, String apellidoMaterno, String carrera, String cuatrimestreActual, String contrasenia, String telefono, Timestamp horaEntrada, Timestamp horaSalida, Date fechaFinalizacion, int idEncargado) {
+    public Alumno(String matricula, String nombre, String apellidoPaterno, String apellidoMaterno, String carrera, String cuatrimestreActual, String contrasenia, String telefono, Time horaEntrada, Time horaSalida, Date fechaFinalizacion, int idEncargado) {
         this.matricula = matricula;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -88,18 +88,18 @@ public class Alumno {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    //Hora entrada
-    public Timestamp getHoraEntrada() {
+    //Entrada
+    public Time getHoraEntrada() {
         return horaEntrada;
     }
-    public void setHoraEntrada(Timestamp horaEntrada) {
+    public void setHoraEntrada(Time horaEntrada) {
         this.horaEntrada = horaEntrada;
     }
-    //Hora salida
-    public Timestamp getHoraSalida() {
+    //Salida
+    public Time getHoraSalida() {
         return horaSalida;
     }
-    public void setHoraSalida(Timestamp horaSalida) {
+    public void setHoraSalida(Time horaSalida) {
         this.horaSalida = horaSalida;
     }
     //Fecha finalizacion
