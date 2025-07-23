@@ -42,14 +42,10 @@ public class BecariosController implements Initializable {
     private TableColumn<Alumno, Date> tablaFecha;
     @FXML
     private TableColumn<Alumno,String> tablaIden;
-
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(titulo);
-        alert.setHeaderText(null);
-        alert.setContentText(mensaje);
-        alert.showAndWait();
-    }
+    @FXML
+    private Button eliminarBecario;
+    @FXML
+    private Button abrirRegistrar;
 
     @Override
     public void initialize(URL url, ResourceBundle resourseBundle){
@@ -75,6 +71,8 @@ public class BecariosController implements Initializable {
                 AlumnoDao d = new AlumnoDao();
                 Alumno alumnoCompleto = d.findByMatricula(seleccionado.getMatricula());
                 abrirVentanaEdicion(alumnoCompleto);
+            }else if(event.getClickCount() == 1 && !tablaBecario.getSelectionModel().isEmpty()){
+                eliminarBecario.setDisable(false);
             }
         });
         tablaBecario.setOnKeyPressed(event -> {
@@ -117,5 +115,15 @@ public class BecariosController implements Initializable {
         alert.setContentText("¿Estas seguro que quieres eliminar este registro?");
         Optional<ButtonType> result = alert.showAndWait();
         return result.isPresent() && result.get() == ButtonType.OK;
+    }
+
+    public void borrarBecario(){
+        if(confirmDelete()){
+            AlumnoDao dao = new AlumnoDao();
+            Alumno seleccionado = (Alumno)tablaBecario.getSelectionModel().getSelectedItem();
+            tablaBecario.getItems().remove(seleccionado);
+            tablaBecario.refresh();
+            dao.deleteAlumno(seleccionado.getMatricula());
+        }
     }
 }
