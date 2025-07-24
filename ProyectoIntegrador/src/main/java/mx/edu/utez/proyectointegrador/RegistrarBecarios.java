@@ -7,7 +7,7 @@ import javafx.scene.control.*;
 import mx.edu.utez.proyectointegrador.modelo.Alumno;
 import mx.edu.utez.proyectointegrador.modelo.dao.AlumnoDao;
 
-import java.sql.Time;
+import java.sql.Timestamp;
 
 public class RegistrarBecarios{
     @FXML
@@ -65,8 +65,8 @@ public class RegistrarBecarios{
                     cuatrimestre.getText(),
                     contrasenia.getText(),
                     telefono.getText(),
-                    Time.valueOf(horaEntrada.getText()),
-                    Time.valueOf(horaSalida.getText()),
+                    Timestamp.valueOf(horaEntrada.getText()),
+                    Timestamp.valueOf(horaSalida.getText()),
                     Date.valueOf(fechaFinalizacion.getValue()),
                     Integer.parseInt(idEn.getText())
             );

@@ -4,6 +4,7 @@ module mx.edu.utez.proyectointegrador {
     requires java.sql;
     requires ucp;
     requires java.desktop;
+    requires jdk.jfr;
 
 
     opens mx.edu.utez.proyectointegrador to javafx.fxml;

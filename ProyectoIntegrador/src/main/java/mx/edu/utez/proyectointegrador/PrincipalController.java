@@ -1,9 +1,16 @@
 package mx.edu.utez.proyectointegrador;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.Button;
 import javafx.animation.AnimationTimer;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalTime;
 import java.time.LocalDate;
@@ -13,12 +20,6 @@ public class PrincipalController {
     private Label horas;
     @FXML
     private Label fechas;
-    @FXML
-    private Button botonEntrada;
-    @FXML
-    private Button botonSalida;
-    @FXML
-    private Button botonAdmin;
 
     private AnimationTimer timer;
 
@@ -48,4 +49,31 @@ public class PrincipalController {
             timer.stop();
         }
     }
+    //Ir al Menu de administrador
+    @FXML
+    void irAdmin(ActionEvent event){
+        try{
+            //Cargar el nuevo FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminIndex.fxml"));
+            Parent root = loader.load();
+            //Crear una nueva ventana (Stage)
+            Stage stage = new Stage();
+            stage.setTitle("Menu administrador");
+            stage.setScene(new Scene(root));
+            stage.show();
+            //Cerrar la ventana actual
+            ((Stage)((Node)event.getSource()).getScene().getWindow()).close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Abrir superposicion
+    //Entrada
+
+
+
+    //Salida
+
 }

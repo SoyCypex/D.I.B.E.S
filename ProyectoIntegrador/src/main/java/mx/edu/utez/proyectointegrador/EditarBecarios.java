@@ -4,11 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import jdk.jfr.Timespan;
 import mx.edu.utez.proyectointegrador.modelo.Alumno;
 import mx.edu.utez.proyectointegrador.modelo.dao.AlumnoDao;
 import java.sql.Date;
 
 import java.sql.Time;
+import java.sql.Timestamp;
 
 public class EditarBecarios {
     @FXML
@@ -67,8 +69,8 @@ public class EditarBecarios {
         String cuatrimestre = cuatrimestreB.getText();
         String contrasenia = contraseniaB.getText();
         String telefono = telefonoB.getText();
-        Time horaEntrada = Time.valueOf(horaEntradaB.getText());
-        Time horaSalida = Time.valueOf(horaSalidaB.getText());
+        Timestamp horaEntrada = Timestamp.valueOf(horaEntradaB.getText());
+        Timestamp horaSalida = Timestamp.valueOf(horaSalidaB.getText());
         Date fechaFinalizacion = Date.valueOf(fechaFinalizacionB.getValue());
         int idEncargado = Integer.parseInt(idEncargadoB.getText());
 

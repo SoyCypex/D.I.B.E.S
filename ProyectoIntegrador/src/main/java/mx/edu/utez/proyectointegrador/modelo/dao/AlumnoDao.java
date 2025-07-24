@@ -1,9 +1,9 @@
 package mx.edu.utez.proyectointegrador.modelo.dao;
 
 import mx.edu.utez.proyectointegrador.modelo.Alumno;
-import mx.edu.utez.proyectointegrador.utils.OracleDatabaseConnectionManager;
 
 import java.sql.*;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +26,8 @@ public class AlumnoDao {
             ps.setString(6, a.getCuatrimestreActual());
             ps.setString(7, a.getContrasenia());
             ps.setString(8, a.getTelefono());
-            ps.setTime(9, a.getHoraEntrada());
-            ps.setTime(10, a.getHoraSalida());
+            ps.setTimestamp(9, a.getHoraEntrada());
+            ps.setTimestamp(10, a.getHoraSalida());
             ps.setDate(11, a.getFechaFinalizacion());
             ps.setInt(12, a.getIdEncargado());
             int resultado  = ps.executeUpdate();
@@ -56,8 +56,8 @@ public class AlumnoDao {
                 a.setNombre(rs.getString("NOMBRE"));
                 a.setCarrera(rs.getString("CARRERA"));
                 a.setCuatrimestreActual(rs.getString("CUATRIMESTRE_ACTUAL"));
-                a.setHoraEntrada(rs.getTime("HORA_ENTRADA"));
-                a.setHoraSalida(rs.getTime("HORA_SALIDA"));
+                a.setHoraEntrada(rs.getTimestamp("HORA_ENTRADA"));
+                a.setHoraSalida(rs.getTimestamp("HORA_SALIDA"));
                 a.setFechaFinalizacion(rs.getDate("FECHA_FINALIZACION"));
                 a.setIdEncargado(rs.getInt("ID_ENCARGADO"));
                 lista.add(a);
@@ -94,8 +94,8 @@ public class AlumnoDao {
             ps.setString(5, a.getCuatrimestreActual());
             ps.setString(6, a.getContrasenia());
             ps.setString(7, a.getTelefono());
-            ps.setTime(8, a.getHoraEntrada());
-            ps.setTime(9, a.getHoraSalida());
+            ps.setTimestamp(8, a.getHoraEntrada());
+            ps.setTimestamp(9, a.getHoraSalida());
             ps.setDate(10, a.getFechaFinalizacion());
             ps.setInt(11, a.getIdEncargado());
             ps.setString(12, matricula); //Este es el WHERE MATRICULA=?
@@ -126,7 +126,7 @@ public class AlumnoDao {
         }
         return seBorro;
     }
-
+    //Encontrar por matricula para modificar
     public Alumno findByMatricula(String matricula){
         Alumno alumno = null;
         String query = "SELECT * FROM ALUMNOS WHERE MATRICULA=?";
@@ -145,8 +145,8 @@ public class AlumnoDao {
                   rs.getString("CUATRIMESTRE_ACTUAL"),
                   rs.getString("CONTRASENIA"),
                   rs.getString("TELEFONO"),
-                  rs.getTime("HORA_ENTRADA"),
-                  rs.getTime("HORA_SALIDA"),
+                  rs.getTimestamp("HORA_ENTRADA"),
+                  rs.getTimestamp("HORA_SALIDA"),
                   rs.getDate("FECHA_FINALIZACION"),
                   rs.getInt("ID_ENCARGADO")
                 );
@@ -155,5 +155,53 @@ public class AlumnoDao {
             e.printStackTrace();
         }
         return alumno;
+    }
+    //Validar credenciales
+    public boolean validarCredenciales(String matricula, String contrasenia){
+        String query = "SELECT COUNT(*) FROM ALUMNOS WHERE MATRICULA=? AND CONTRASENA=?";
+        try{
+            Connection conn = getConnection();
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, matricula);
+            ps.setString(2, contrasenia);
+            try (ResultSet rs = ps.executeQuery()){
+                if(rs.next()){
+                    return rs.getInt(1) > 0;
+                }
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    //Buscar alumno
+    public Alumno getAlumnoByMatricula(String matricula){
+        String query = "SELECT * FROM ALUMNOS WHERE MATRICULA=?";
+        try{
+            Connection conn = getConnection();
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, matricula);
+            try(ResultSet rs = ps.executeQuery()){
+                if(rs.next()){
+                    String nombre = rs.getString("NOMBRE");
+                    String apellidoPaterno = rs.getString("APELLIDO_PATERNO");
+                    String apellidoMaterno = rs.getString("APELLIDO_MATERNO");
+                    String carrera = rs.getString("CARRERA");
+                    String cuatrimestreActual = rs.getString("CUATRIMESTRE_ACTUAL");
+                    String contrasenia = rs.getString("CONTRASENA");
+                    String telefono = rs.getString("TELEFONO");
+                    Timestamp horaEntradaAsignada = rs.getTimestamp("HORA_ENTRADA");
+                    Timestamp horaSalidaAsignada = rs.getTimestamp("HORA_SALIDA");
+                    Date fechaFinalizacion = rs.getDate("FECHA_FINALIZACION");
+                    int idEncargado = rs.getInt("ID_ENCARGADO");
+
+                    return new Alumno(matricula, nombre, apellidoPaterno, apellidoMaterno, carrera, cuatrimestreActual, contrasenia, telefono, horaEntradaAsignada, horaSalidaAsignada, fechaFinalizacion, idEncargado);
+
+                }
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }
