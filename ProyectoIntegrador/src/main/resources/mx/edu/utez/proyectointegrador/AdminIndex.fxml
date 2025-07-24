@@ -6,65 +6,65 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="779.0" prefWidth="1440.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.IndexController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="150.0" layoutY="875.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1113.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
-      <Text layoutX="456.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido Administrador">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" layoutY="-1.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="120.0" layoutY="659.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutY="-1.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1113.0" layoutY="-1.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
+      <Text layoutX="466.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido Administrador">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Text>
-      <Button layoutX="126.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Becarios">
+      <Button fx:id="abrirBecarios" layoutX="241.0" layoutY="353.0" minHeight="60.0" minWidth="300.0" mnemonicParsing="false" onAction="#abrirBecarios" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Becarios">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="80.0" layoutX="448.0" layoutY="435.0" stroke="BLACK" strokeType="INSIDE" />
-      <Text fill="WHITE" layoutX="57.0" layoutY="943.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora" textAlignment="CENTER">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="80.0" layoutX="488.0" layoutY="378.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="horas" fill="WHITE" layoutX="58.0" layoutY="705.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="57.0" layoutY="986.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha" textAlignment="CENTER">
+      <Text fx:id="fechas" fill="WHITE" layoutX="58.0" layoutY="748.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Text>
-      <Button layoutX="126.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Faltas">
+      <Button fx:id="abrirFaltas" layoutX="241.0" layoutY="443.0" minHeight="60.0" minWidth="300.0" mnemonicParsing="false" onAction="#abrirFaltas" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Faltas">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="526.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Asistencias">
+      <Button fx:id="abrirAsistencias" layoutX="566.0" layoutY="353.0" minHeight="60.0" minWidth="300.0" mnemonicParsing="false" onAction="#abrirAsistencias" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Asistencias">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="933.0" layoutY="410.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Encargados">
+      <Button fx:id="abrirEncargados" layoutX="894.0" layoutY="353.0" minHeight="60.0" minWidth="300.0" mnemonicParsing="false" onAction="#abrirEncargados" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Encargados">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="526.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Retardos">
+      <Button fx:id="abrirRetardos" layoutX="566.0" layoutY="443.0" minHeight="60.0" minWidth="300.0" mnemonicParsing="false" onAction="#abrirRetardos" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Retardos">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button layoutX="933.0" layoutY="520.0" minHeight="80.0" minWidth="360.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" text="Salir">
+      <Button fx:id="salir" layoutX="894.0" layoutY="443.0" minHeight="60.0" minWidth="300.0" mnemonicParsing="false" onAction="#salir" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo" text="Salir">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1126.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-      <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="1165.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1126.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
+      <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="1165.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/CDSlogo.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="33.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="33.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/utezlogo.png" />
          </image></ImageView>

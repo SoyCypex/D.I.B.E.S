@@ -6,7 +6,6 @@ import javafx.scene.control.*;
 import mx.edu.utez.proyectointegrador.modelo.Alumno;
 import mx.edu.utez.proyectointegrador.modelo.dao.AlumnoDao;
 import mx.edu.utez.proyectointegrador.modelo.dao.AsistenciaDao;
-import java.sql.Date;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

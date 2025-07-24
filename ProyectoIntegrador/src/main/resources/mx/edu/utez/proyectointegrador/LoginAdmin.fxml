@@ -6,41 +6,41 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="779.0" prefWidth="1442.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.LoginController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" layoutX="2.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1112.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="527.0" layoutX="420.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1f2f3" height="125.0" layoutX="420.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <Text layoutX="597.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicio Sesión" textAlignment="CENTER">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1114.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="527.0" layoutX="422.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1f2f3" height="125.0" layoutX="422.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Text layoutX="599.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicio Sesión" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Text>
-      <TextField layoutX="446.0" layoutY="431.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="550.0" promptText="Usuario">
+      <TextField fx:id="usuario" layoutX="448.0" layoutY="344.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="550.0" promptText="Usuario" styleClass="text-field">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <PasswordField layoutX="446.0" layoutY="540.0" prefHeight="50.0" prefWidth="550.0" promptText="Contraseña">
+      <PasswordField fx:id="contrasenia" layoutX="448.0" layoutY="453.0" prefHeight="50.0" prefWidth="550.0" promptText="Contraseña" styleClass="password-field">
          <font>
             <Font name="Arial" size="30.0" />
          </font>
       </PasswordField>
-      <Button layoutX="446.0" layoutY="640.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Iniciar" textAlignment="CENTER">
+      <Button fx:id="botonIniciar" layoutX="448.0" layoutY="553.0" mnemonicParsing="false" onAction="#iniciar" prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Iniciar" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-      <Button layoutX="1055.0" layoutY="911.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="354.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Pantalla principal" textAlignment="CENTER">
+      <Button fx:id="botonRegresar" layoutX="1066.0" layoutY="662.0" mnemonicParsing="false" onAction="#regresar" prefHeight="80.0" prefWidth="354.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Pantalla principal" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1125.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-      <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="1158.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1127.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
+      <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="1160.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/CDSlogo.jpg" />
          </image></ImageView>
@@ -48,5 +48,6 @@
          <image>
             <Image url="@Images/utezlogo.png" />
          </image></ImageView>
+      <ProgressIndicator fx:id="spinner" layoutX="697.0" layoutY="384.0" prefHeight="66.0" prefWidth="71.0" visible="false" />
    </children>
 </AnchorPane>

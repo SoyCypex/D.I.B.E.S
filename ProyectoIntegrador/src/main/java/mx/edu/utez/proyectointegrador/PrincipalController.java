@@ -49,16 +49,16 @@ public class PrincipalController {
             timer.stop();
         }
     }
-    //Ir al Menu de administrador
+    //Ir al inicio de sesion de admin
     @FXML
     void irAdmin(ActionEvent event){
         try{
             //Cargar el nuevo FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminIndex.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginAdmin.fxml"));
             Parent root = loader.load();
             //Crear una nueva ventana (Stage)
             Stage stage = new Stage();
-            stage.setTitle("Menu administrador");
+            stage.setTitle("Login administrador");
             stage.setScene(new Scene(root));
             stage.show();
             //Cerrar la ventana actual
@@ -71,9 +71,6 @@ public class PrincipalController {
 
     //Abrir superposicion
     //Entrada
-
-
-
     //Salida
 
 }

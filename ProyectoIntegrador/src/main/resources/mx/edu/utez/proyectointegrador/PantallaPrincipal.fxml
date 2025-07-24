@@ -67,12 +67,12 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <Button fx:id="botonEntrada" layoutX="570.0" layoutY="428.0" mnemonicParsing="false" onAction="#registrarEntrada" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: #13a583; -fx-text-fill: white;" styleClass="boton-efecto" text="Entrada" textAlignment="CENTER">
+      <Button fx:id="botonEntrada" layoutX="570.0" layoutY="428.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: #13a583; -fx-text-fill: white;" styleClass="boton-efecto" text="Entrada" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Button fx:id="botonSalida" layoutX="570.0" layoutY="516.0" mnemonicParsing="false" onAction="#registrarSalida" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: #13a583; -fx-text-fill: white;" styleClass="boton-efecto" text="Salida" textAlignment="CENTER">
+      <Button fx:id="botonSalida" layoutX="570.0" layoutY="516.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: #13a583; -fx-text-fill: white;" styleClass="boton-efecto" text="Salida" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
