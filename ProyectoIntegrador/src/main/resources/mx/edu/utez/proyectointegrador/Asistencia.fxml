@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="779.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="779.0" prefWidth="1440.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.AsistenciaController">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="80.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="110.0" layoutY="669.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
-        <Button layoutX="1097.0" layoutY="694.0" minHeight="60.0" minWidth="300.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Menu" textAlignment="CENTER">
+        <Button fx:id="menu" layoutX="1097.0" layoutY="694.0" minHeight="60.0" minWidth="300.0" mnemonicParsing="false" onAction="#regresarMenu" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Menu" textAlignment="CENTER">
             <font>
                 <Font name="Arial Bold" size="32.0" />
             </font>
@@ -25,11 +24,11 @@
                 <Font name="Arial Bold" size="40.0" />
             </font>
         </Text>
-        <TextField layoutX="497.0" layoutY="104.0" minHeight="35.0" minWidth="490.0" prefHeight="40.0" prefWidth="490.0">
+        <TextField layoutX="495.0" layoutY="93.0" minHeight="45.0" minWidth="490.0" prefHeight="45.0" prefWidth="490.0" styleClass="buscador">
             <font>
                 <Font name="Arial" size="12.0" />
             </font></TextField>
-        <Button layoutX="667.0" layoutY="155.0" minHeight="30.0" minWidth="110.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #D9D9D9; -fx-text-fill: black;" text="Buscar">
+        <Button layoutX="667.0" layoutY="155.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #D9D9D9; -fx-text-fill: black;" styleClass="boton-gris" text="Buscar">
             <font>
                 <Font name="Arial Bold" size="15.0" />
             </font>
@@ -51,16 +50,16 @@
             <image>
                 <Image url="@Images/CDSlogo.jpg" />
             </image></ImageView>
-        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="455.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="455.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@Images/search.png" />
             </image></ImageView>
-      <Button layoutX="652.0" layoutY="591.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" text="Eliminar">
+      <Button disable="true" layoutX="652.0" layoutY="591.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="1234.0" layoutY="606.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Registrar asistencia">
+      <Button layoutX="1234.0" layoutY="606.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar asistencia">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

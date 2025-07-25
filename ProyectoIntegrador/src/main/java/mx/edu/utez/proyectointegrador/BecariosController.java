@@ -1,7 +1,9 @@
 package mx.edu.utez.proyectointegrador;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import mx.edu.utez.proyectointegrador.modelo.Alumno;
 import mx.edu.utez.proyectointegrador.modelo.dao.AlumnoDao;
@@ -15,6 +17,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
 
@@ -124,6 +128,23 @@ public class BecariosController implements Initializable {
             tablaBecario.getItems().remove(seleccionado);
             tablaBecario.refresh();
             dao.deleteAlumno(seleccionado.getMatricula());
+        }
+    }
+    @FXML
+    void regresarMenu(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminIndex.fxml"));
+            Parent root = loader.load();
+            //Crear una nueva ventana
+            Stage loginStage = new Stage();
+            loginStage.setTitle("Admin Index");
+            loginStage.setScene(new Scene(root));
+            loginStage.show();
+            //Cerrar la ventana actual
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

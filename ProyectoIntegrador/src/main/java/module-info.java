@@ -8,5 +8,7 @@ module mx.edu.utez.proyectointegrador {
 
 
     opens mx.edu.utez.proyectointegrador to javafx.fxml;
+    opens mx.edu.utez.proyectointegrador.modelo to javafx.fxml;
     exports mx.edu.utez.proyectointegrador;
+    exports mx.edu.utez.proyectointegrador.modelo;
 }

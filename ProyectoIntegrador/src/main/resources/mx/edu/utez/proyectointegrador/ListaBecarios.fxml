@@ -6,63 +6,63 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#borrarBecario" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.BecariosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#borrarBecario" prefHeight="779.0" prefWidth="1440.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.BecariosController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="150.0" layoutY="874.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
-      <Button fx:id="botonMenu" layoutX="1054.0" layoutY="909.0" minHeight="80.0" minWidth="354.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Menu" textAlignment="CENTER">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="80.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="110.0" layoutY="669.0" stroke="#13a583" strokeType="INSIDE" width="1440.0" />
+      <Button fx:id="botonMenu" layoutX="1108.0" layoutY="694.0" minHeight="60.0" minWidth="300.0" mnemonicParsing="false" onAction="#regresarMenu" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Menu" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1112.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1125.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-      <Text layoutX="636.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Becarios" textAlignment="CENTER">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="170.0" stroke="#13a583" strokeType="INSIDE" width="300.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="170.0" layoutX="1139.0" stroke="#13a583" strokeType="INSIDE" width="300.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="160.0" stroke="WHITE" strokeType="INSIDE" width="288.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="160.0" layoutX="1152.0" stroke="WHITE" strokeType="INSIDE" width="288.0" />
+      <Text fill="WHITE" layoutX="636.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Becarios" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Text>
-      <TextField fx:id="buscarBecario" layoutX="455.0" layoutY="241.0" minHeight="35.0" minWidth="530.0">
+      <TextField fx:id="buscarBecario" layoutX="461.0" layoutY="98.0" minHeight="45.0" minWidth="490.0" styleClass="buscador">
          <font>
             <Font name="Arial" size="12.0" />
          </font></TextField>
-      <Button fx:id="botonBuscar" layoutX="650.0" layoutY="303.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #D9D9D9; -fx-text-fill: black;" text="Buscar">
+      <Button fx:id="botonBuscar" layoutX="651.0" layoutY="154.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" style="-fx-background-color: #D9D9D9; -fx-text-fill: black;" styleClass="boton-gris" text="Buscar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <TableView fx:id="tablaBecario" layoutX="12.0" layoutY="368.0" prefHeight="400.0" prefWidth="1416.0">
+      <TableView fx:id="tablaBecario" layoutX="147.0" layoutY="206.0" prefHeight="368.0" prefWidth="1146.0">
         <columns>
-          <TableColumn fx:id="tablaMatricula" prefWidth="169.0" text="Matricula" />
-          <TableColumn fx:id="tablaNombre" prefWidth="273.0" text="Nombre" />
-            <TableColumn fx:id="tablaCarrera" prefWidth="180.0" text="Carrera" />
-            <TableColumn fx:id="tablaCuatri" prefWidth="180.0" text="Cuatrimestre_Actual" />
-            <TableColumn fx:id="tablaEntrada" prefWidth="151.0" text="Hora_entrada" />
-            <TableColumn fx:id="tablaSalida" prefWidth="120.0" text="Hora_salida" />
-            <TableColumn fx:id="tablaFecha" prefWidth="206.0" text="Fecha_finalizacion" />
-            <TableColumn fx:id="tablaIden" prefWidth="136.0" text="ID_Encargado" />
+          <TableColumn fx:id="tablaMatricula" prefWidth="146.60001182556152" text="Matricula" />
+          <TableColumn fx:id="tablaNombre" prefWidth="214.1999969482422" text="Nombre" />
+            <TableColumn fx:id="tablaCarrera" prefWidth="155.99996948242188" text="Carrera" />
+            <TableColumn fx:id="tablaCuatri" prefWidth="159.99996948242188" text="Cuatrimestre_Actual" />
+            <TableColumn fx:id="tablaEntrada" prefWidth="171.20001220703125" text="Hora_entrada" />
+            <TableColumn fx:id="tablaSalida" prefWidth="136.20001220703125" text="Hora_salida" />
+            <TableColumn fx:id="tablaFecha" prefWidth="164.4000244140625" text="Fecha_finalizacion" />
+            <TableColumn fx:id="tablaIden" prefWidth="242.0" text="ID_Encargado" />
         </columns>
       </TableView>
-      <ImageView fitHeight="122.0" fitWidth="236.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="45.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/utezlogo.png" />
          </image></ImageView>
-      <ImageView fitHeight="122.0" fitWidth="236.0" layoutX="1186.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="1213.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/CDSlogo.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="404.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="415.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/search.png" />
          </image></ImageView>
-      <Button fx:id="eliminarBecario" disable="true" layoutX="650.0" layoutY="787.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" text="Eliminar">
+      <Button fx:id="eliminarBecario" disable="true" layoutX="650.0" layoutY="591.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="abrirRegistrar" layoutX="1268.0" layoutY="828.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" text="Registrar">
+      <Button fx:id="abrirRegistrar" layoutX="1268.0" layoutY="614.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
