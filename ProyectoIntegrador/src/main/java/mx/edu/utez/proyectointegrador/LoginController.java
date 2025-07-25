@@ -30,7 +30,9 @@ public class LoginController {
     void iniciar(ActionEvent event) {
         String usuariotxt = usuario.getText();
         String contraseniatxt = contrasenia.getText();
-        //Mostrar el spinner y deshabilitar botones
+        //Mostrar el spinner, deshabilitar botones y campos de texto
+        usuario.setDisable(true);
+        contrasenia.setDisable(true);
         spinner.setVisible(true);
         botonIniciar.setDisable(true);
         botonRegresar.setDisable(true);
@@ -45,7 +47,9 @@ public class LoginController {
         //Cuando termine la tarea
         tareaLogin.setOnSucceeded(e -> {
             boolean valido = tareaLogin.getValue();
-            //Ocultar spinner y reactivar botones
+            //Ocultar spinner, reactivar botones y campos de texto
+            usuario.setDisable(false);
+            contrasenia.setDisable(false);
             spinner.setVisible(false);
             botonIniciar.setDisable(false);
             botonRegresar.setDisable(false);

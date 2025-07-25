@@ -6,105 +6,105 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.RegistrarBecarios">
+<AnchorPane prefHeight="779.0" prefWidth="1621.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.RegistrarBecarios">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="110.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="193.0" layoutX="1320.0" stroke="#13a583" strokeType="INSIDE" width="328.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="175.0" layoutX="1333.0" stroke="WHITE" strokeType="INSIDE" width="315.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="828.0" layoutX="528.0" layoutY="118.0" stroke="BLACK" strokeType="INSIDE" width="612.0" />
-      <Text fill="WHITE" layoutX="739.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro">
-         <font>
-            <Font name="Arial Bold" size="40.0" />
-         </font></Text>
-      <TextField fx:id="matricula" layoutX="621.0" layoutY="157.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" />
-      <Button fx:id="registrar" layoutX="732.0" layoutY="954.0" mnemonicParsing="false" onAction="#registrarBecario" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#068668" height="50.0" stroke="#068668" strokeType="INSIDE" width="1440.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="170.0" stroke="#13a583" strokeType="INSIDE" width="300.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="160.0" stroke="WHITE" strokeType="INSIDE" width="288.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#13a583" height="170.0" layoutX="1321.0" stroke="#13a583" strokeType="INSIDE" width="300.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="160.0" layoutX="1333.0" stroke="WHITE" strokeType="INSIDE" width="288.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="679.0" layoutX="602.0" layoutY="56.0" stroke="BLACK" strokeType="INSIDE" width="428.0" />
+      <Text fill="WHITE" layoutX="751.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro">
          <font>
             <Font name="Arial Bold" size="32.0" />
+         </font></Text>
+      <TextField fx:id="matricula" layoutX="611.0" layoutY="82.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" />
+      <Button fx:id="registrar" layoutX="754.0" layoutY="740.0" mnemonicParsing="false" onAction="#registrarBecario" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
          </font></Button>
-      <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="33.0" layoutY="13.0">
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="44.0" layoutY="22.0">
          <image>
             <Image url="@Images/utezlogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="1366.0" layoutY="13.0">
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="1377.0" layoutY="30.0">
          <image>
             <Image url="@Images/CDSlogo.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="carrera" layoutX="621.0" layoutY="429.0" prefHeight="35.0" prefWidth="400.0" promptText="DSM" />
-      <TextField fx:id="aPaterno" layoutX="623.0" layoutY="288.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Paterno" />
-      <TextField fx:id="aMaterno" layoutX="621.0" layoutY="358.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Materno" />
-      <TextField fx:id="nombre" layoutX="623.0" layoutY="217.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre" />
-      <TextField fx:id="cuatrimestre" layoutX="617.0" layoutY="494.0" prefHeight="35.0" prefWidth="400.0" promptText="Cuatrimestre" />
-      <Text layoutX="622.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la matricula:">
+      <TextField fx:id="carrera" layoutX="614.0" layoutY="313.0" prefHeight="35.0" prefWidth="400.0" promptText="DSM" />
+      <TextField fx:id="aPaterno" layoutX="612.0" layoutY="198.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Paterno" />
+      <TextField fx:id="aMaterno" layoutX="613.0" layoutY="255.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Materno" />
+      <TextField fx:id="nombre" layoutX="609.0" layoutY="141.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre" />
+      <TextField fx:id="cuatrimestre" layoutX="615.0" layoutY="369.0" prefHeight="35.0" prefWidth="400.0" promptText="Cuatrimestre" />
+      <Text layoutX="612.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la matricula:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="620.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el nombre:">
+      <Text layoutX="610.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el nombre:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="622.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el apellido paterno:">
+      <Text layoutX="611.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el apellido paterno:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="620.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el apellido materno:">
+      <Text layoutX="612.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el apellido materno:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="622.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la carrera:">
+      <Text layoutX="613.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la carrera:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="619.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese cuatrimestre actual:">
+      <Text layoutX="615.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese cuatrimestre actual:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="horaEntrada" layoutX="623.0" layoutY="702.0" prefHeight="35.0" prefWidth="400.0" promptText="7:00" />
-      <TextField fx:id="horaSalida" layoutX="621.0" layoutY="770.0" prefHeight="35.0" prefWidth="400.0" promptText="Hora de salida" />
-      <Text layoutX="624.0" layoutY="698.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese hora de entrada:">
+      <TextField fx:id="horaEntrada" layoutX="617.0" layoutY="539.0" prefHeight="35.0" prefWidth="400.0" promptText="7:00" />
+      <TextField fx:id="horaSalida" layoutX="618.0" layoutY="598.0" prefHeight="35.0" prefWidth="400.0" promptText="Hora de salida" />
+      <Text layoutX="617.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese hora de entrada:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="620.0" layoutY="766.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese hora de salida:">
+      <Text layoutX="618.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese hora de salida:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <DatePicker fx:id="fechaFinalizacion" layoutX="795.0" layoutY="825.0" />
-      <Text layoutX="624.0" layoutY="843.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
+      <DatePicker fx:id="fechaFinalizacion" layoutX="801.0" layoutY="643.0" />
+      <Text layoutX="640.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Button layoutX="1260.0" layoutY="917.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="360.0" style="-fx-background-color: #245C93; -fx-text-fill: WHITE;" text="Becarios">
+      <Button layoutX="1388.0" layoutY="712.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #245C93; -fx-text-fill: WHITE;" text="Becarios">
          <font>
-            <Font name="Arial Bold" size="32.0" />
+            <Font name="Arial Bold" size="18.0" />
          </font>
       </Button>
-      <TextField fx:id="contrasenia" layoutX="617.0" layoutY="564.0" prefHeight="35.0" prefWidth="400.0" promptText="Minimo 15 caracteres" />
-      <Text layoutX="618.0" layoutY="560.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cree una contraseña:">
+      <TextField fx:id="contrasenia" layoutX="616.0" layoutY="425.0" prefHeight="35.0" prefWidth="400.0" promptText="Minimo 15 caracteres" />
+      <Text layoutX="615.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cree una contraseña:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="idEn" layoutX="621.0" layoutY="877.0" prefHeight="35.0" prefWidth="400.0" promptText="1" />
-      <Text layoutX="621.0" layoutY="874.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de encargado:">
+      <TextField fx:id="idEn" layoutX="619.0" layoutY="690.0" prefHeight="35.0" prefWidth="400.0" promptText="1" />
+      <Text layoutX="620.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de encargado:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="telefono" layoutX="621.0" layoutY="633.0" prefHeight="35.0" prefWidth="400.0" promptText="Sin espacios" />
-      <Text layoutX="621.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono celular:">
+      <TextField fx:id="telefono" layoutX="617.0" layoutY="480.0" prefHeight="35.0" prefWidth="400.0" promptText="Sin espacios" />
+      <Text layoutX="616.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono celular:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

@@ -4,12 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import jdk.jfr.Timespan;
 import mx.edu.utez.proyectointegrador.modelo.Alumno;
 import mx.edu.utez.proyectointegrador.modelo.dao.AlumnoDao;
 import java.sql.Date;
-
-import java.sql.Time;
 import java.sql.Timestamp;
 
 public class EditarBecarios {

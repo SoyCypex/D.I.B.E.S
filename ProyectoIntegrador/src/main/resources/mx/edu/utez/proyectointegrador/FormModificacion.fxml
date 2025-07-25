@@ -5,85 +5,85 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="985.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.EditarBecarios">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="779.0" prefWidth="521.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.EditarBecarios">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="828.0" layoutX="29.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" width="612.0" />
-      <Text layoutX="213.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificacion">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="700.0" layoutX="26.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="470.0" />
+      <Text layoutX="169.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificacion">
          <font>
-            <Font name="Arial Bold" size="40.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font></Text>
-      <TextField fx:id="matriculaB" layoutX="133.0" layoutY="113.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" />
-      <Button fx:id="modificar" layoutX="242.0" layoutY="918.0" mnemonicParsing="false" onAction="#actualizarBecario" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Modificar">
+      <TextField fx:id="matriculaB" layoutX="61.0" layoutY="65.0" prefHeight="15.0" prefWidth="400.0" promptText="Matricula" styleClass="campo-formulario" />
+      <Button fx:id="modificar" layoutX="200.0" layoutY="739.0" mnemonicParsing="false" onAction="#actualizarBecario" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" styleClass="boton-pequeno-verde" text="Modificar">
          <font>
-            <Font name="Arial Bold" size="32.0" />
+            <Font name="Arial Bold" size="18.0" />
          </font></Button>
-      <TextField fx:id="carreraB" layoutX="133.0" layoutY="378.0" prefHeight="35.0" prefWidth="400.0" promptText="DSM" />
-      <TextField fx:id="aPaternoB" layoutX="134.0" layoutY="245.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Paterno" />
-      <TextField fx:id="aMaternoB" layoutX="133.0" layoutY="313.0" prefHeight="35.0" prefWidth="400.0" promptText="Apellido Materno" />
-      <TextField fx:id="nombreB" layoutX="134.0" layoutY="179.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre" />
-      <TextField fx:id="cuatrimestreB" layoutX="131.0" layoutY="444.0" prefHeight="35.0" prefWidth="400.0" promptText="Cuatrimestre" />
-      <Text layoutX="134.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula:">
+      <TextField fx:id="carreraB" layoutX="61.0" layoutY="293.0" prefHeight="15.0" prefWidth="400.0" promptText="DSM" styleClass="campo-formulario" />
+      <TextField fx:id="aPaternoB" layoutX="60.0" layoutY="179.0" prefHeight="15.0" prefWidth="400.0" promptText="Apellido Paterno" styleClass="campo-formulario" />
+      <TextField fx:id="aMaternoB" layoutX="61.0" layoutY="237.0" prefHeight="15.0" prefWidth="400.0" promptText="Apellido Materno" styleClass="campo-formulario" />
+      <TextField fx:id="nombreB" layoutX="59.0" layoutY="121.0" prefHeight="15.0" prefWidth="400.0" promptText="Nombre" styleClass="campo-formulario" />
+      <TextField fx:id="cuatrimestreB" layoutX="59.0" layoutY="349.0" prefHeight="15.0" prefWidth="400.0" promptText="Cuatrimestre" styleClass="campo-formulario" />
+      <Text layoutX="62.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="131.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
+      <Text layoutX="59.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="134.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido paterno">
+      <Text layoutX="60.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido paterno">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="132.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido materno">
+      <Text layoutX="62.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido materno">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="133.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carrera:">
+      <Text layoutX="61.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carrera:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="129.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuatrimestre:">
+      <Text layoutX="59.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuatrimestre:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="horaEntradaB" layoutX="131.0" layoutY="651.0" prefHeight="35.0" prefWidth="400.0" promptText="7:00" />
-      <TextField fx:id="horaSalidaB" layoutX="129.0" layoutY="723.0" prefHeight="35.0" prefWidth="400.0" promptText="Hora de salida" />
-      <Text layoutX="131.0" layoutY="647.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de entrada:">
+      <TextField fx:id="horaEntradaB" layoutX="60.0" layoutY="517.0" prefHeight="15.0" prefWidth="400.0" promptText="7:00" styleClass="campo-formulario" />
+      <TextField fx:id="horaSalidaB" layoutX="61.0" layoutY="573.0" prefHeight="15.0" prefWidth="400.0" promptText="Hora de salida" styleClass="campo-formulario" />
+      <Text layoutX="60.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de entrada:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="124.0" layoutY="720.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de salida:">
+      <Text layoutX="61.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de salida:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <DatePicker fx:id="fechaFinalizacionB" layoutX="313.0" layoutY="773.0" />
-      <Text layoutX="144.0" layoutY="792.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
+      <DatePicker fx:id="fechaFinalizacionB" layoutX="240.0" layoutY="621.0" styleClass="date-picker-formulario" />
+      <Text layoutX="72.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de finalizacion:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="contraseniaB" layoutX="131.0" layoutY="513.0" prefHeight="35.0" prefWidth="400.0" promptText="Minimo 15 caracteres" />
-      <Text layoutX="129.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:">
+      <TextField fx:id="contraseniaB" layoutX="59.0" layoutY="404.0" prefHeight="15.0" prefWidth="400.0" promptText="Minimo 15 caracteres" styleClass="campo-formulario" />
+      <Text layoutX="59.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="idEncargadoB" layoutX="129.0" layoutY="829.0" prefHeight="35.0" prefWidth="400.0" promptText="1" />
-      <Text layoutX="131.0" layoutY="826.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de encargado:">
+      <TextField fx:id="idEncargadoB" layoutX="59.0" layoutY="674.0" prefHeight="15.0" prefWidth="400.0" promptText="1" styleClass="campo-formulario" />
+      <Text layoutX="59.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de encargado:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="telefonoB" layoutX="129.0" layoutY="580.0" prefHeight="35.0" prefWidth="400.0" promptText="Sin espacios" />
-      <Text layoutX="132.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono celular:">
+      <TextField fx:id="telefonoB" layoutX="60.0" layoutY="460.0" prefHeight="15.0" prefWidth="400.0" promptText="Sin espacios" styleClass="campo-formulario" />
+      <Text layoutX="59.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono celular:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

@@ -60,11 +60,11 @@ public class BecariosController implements Initializable {
         tablaMatricula.setCellValueFactory(new PropertyValueFactory<>("matricula"));
         tablaNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         tablaCarrera.setCellValueFactory(new PropertyValueFactory<>("carrera"));
-        tablaCuatri.setCellValueFactory(new PropertyValueFactory<>("cuatrimestre"));
-        tablaEntrada.setCellValueFactory(new PropertyValueFactory<>("entrada"));
-        tablaSalida.setCellValueFactory(new PropertyValueFactory<>("salida"));
-        tablaFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
-        tablaIden.setCellValueFactory(new PropertyValueFactory<>("iden"));
+        tablaCuatri.setCellValueFactory(new PropertyValueFactory<>("cuatrimestreActual"));
+        tablaEntrada.setCellValueFactory(new PropertyValueFactory<>("horaEntrada"));
+        tablaSalida.setCellValueFactory(new PropertyValueFactory<>("horaSalida"));
+        tablaFecha.setCellValueFactory(new PropertyValueFactory<>("fechaFinalizacion"));
+        tablaIden.setCellValueFactory(new PropertyValueFactory<>("idEncargado"));
         //Pintar los datos los datos
         tablaBecario.setItems(datosObservables);
         //Ponerle un evento a la tabla
@@ -105,7 +105,10 @@ public class BecariosController implements Initializable {
             stage.setScene(new Scene(root));
             stage.setTitle("Modificar Becario");
             stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
+            stage.showAndWait(); //Espera a que se cierre la ventana
+            AlumnoDao dao = new AlumnoDao();
+            List<Alumno> datosActualizados = dao.readAlumnos();
+            tablaBecario.setItems(FXCollections.observableArrayList(datosActualizados));
             tablaBecario.refresh();
         }catch (Exception e){
             e.printStackTrace();
@@ -138,6 +141,24 @@ public class BecariosController implements Initializable {
             //Crear una nueva ventana
             Stage loginStage = new Stage();
             loginStage.setTitle("Admin Index");
+            loginStage.setScene(new Scene(root));
+            loginStage.show();
+            //Cerrar la ventana actual
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void registrarBecario(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FormRegistro.fxml"));
+            Parent root = loader.load();
+            //Crear una nueva ventana
+            Stage loginStage = new Stage();
+            loginStage.setTitle("Registrar Becarios");
             loginStage.setScene(new Scene(root));
             loginStage.show();
             //Cerrar la ventana actual

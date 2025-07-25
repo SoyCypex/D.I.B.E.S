@@ -82,7 +82,7 @@ public class AlumnoDao {
     public boolean updateAlumno(String matricula, Alumno a){
         //Obtener la conexion
         //Preparar el sql statement
-        String query = "UPDATE ALUMNOS SET NOMBRE=?, APELLIDO_PATERNO=?, APELLIDO_MATERNO=?, CARRERA=?, CUATRIMESTRE_ACTUAL=?, CONTASENIA=?, TELEFONO=?, HORA_ENTRADA=?, HORA_SALIDA=?, FECHA_FINALIZACION=?, ID_ENCARGADO=? WHERE MATRICULA=? ";
+        String query = "UPDATE ALUMNOS SET NOMBRE=?, APELLIDO_PATERNO=?, APELLIDO_MATERNO=?, CARRERA=?, CUATRIMESTRE_ACTUAL=?, CONTRASENIA=?, TELEFONO=?, HORA_ENTRADA=?, HORA_SALIDA=?, FECHA_FINALIZACION=?, ID_ENCARGADO=? WHERE MATRICULA=? ";
         try{
             Connection conn = getConnection();
             PreparedStatement ps = conn.prepareStatement(query);

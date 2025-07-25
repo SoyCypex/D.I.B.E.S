@@ -62,7 +62,7 @@
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="abrirRegistrar" layoutX="1268.0" layoutY="614.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar">
+      <Button fx:id="abrirRegistrar" layoutX="1268.0" layoutY="614.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" onAction="#registrarBecario" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
