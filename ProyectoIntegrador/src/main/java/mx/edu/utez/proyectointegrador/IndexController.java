@@ -140,7 +140,7 @@ public class IndexController {
             Parent root = (Parent) loader.load();
             //Crear una nueva ventana (Stage)
             Stage stage = new Stage();
-            stage.setTitle("Retardos");
+            stage.setTitle("Encargados");
             stage.setScene(new Scene(root));
             stage.show();
             //Cerrar la ventana actual
