@@ -57,7 +57,7 @@
          <image>
             <Image url="@Images/search.png" />
          </image></ImageView>
-      <Button fx:id="eliminarBecario" disable="true" layoutX="650.0" layoutY="591.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
+      <Button fx:id="eliminarBecario" disable="true" layoutX="650.0" layoutY="591.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" onAction="#borrarBecario" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

@@ -55,6 +55,8 @@ public class BecariosController implements Initializable {
     public void initialize(URL url, ResourceBundle resourseBundle){
         AlumnoDao dao = new AlumnoDao();
         List<Alumno> datos = dao.readAlumnos();
+        Tooltip tooltip = new Tooltip("Doble clic para editar • Backspace o 'Eliminar' para borrar");
+        Tooltip.install(tablaBecario, tooltip);
         ObservableList<Alumno> datosObservables = FXCollections.observableArrayList(datos);
 
         tablaMatricula.setCellValueFactory(new PropertyValueFactory<>("matricula"));
@@ -156,16 +158,21 @@ public class BecariosController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FormRegistro.fxml"));
             Parent root = loader.load();
-            //Crear una nueva ventana
-            Stage loginStage = new Stage();
-            loginStage.setTitle("Registrar Becarios");
-            loginStage.setScene(new Scene(root));
-            loginStage.show();
-            //Cerrar la ventana actual
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.close();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Registrar Becarios");
+            stage.initModality(Modality.APPLICATION_MODAL); //Espera a que la ventana se cierre
+            stage.showAndWait();
+            //Una vez cerrada la ventana de registro, actualizamos la tabla:
+            AlumnoDao dao = new AlumnoDao();
+            List<Alumno> lista = dao.readAlumnos();
+            tablaBecario.setItems(FXCollections.observableArrayList(lista));
+            tablaBecario.refresh();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

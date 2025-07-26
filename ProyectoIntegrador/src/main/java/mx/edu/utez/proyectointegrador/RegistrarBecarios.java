@@ -2,12 +2,23 @@ package mx.edu.utez.proyectointegrador;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+
+import java.io.IOException;
 import java.sql.Date;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import mx.edu.utez.proyectointegrador.modelo.Alumno;
 import mx.edu.utez.proyectointegrador.modelo.dao.AlumnoDao;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 
 public class RegistrarBecarios{
     @FXML
@@ -47,15 +58,16 @@ public class RegistrarBecarios{
 
     @FXML
     public void registrarBecario(ActionEvent event){
-        //Validar campos obligatorios y formato
         if (matricula.getText().isEmpty() ||
-               nombre.getText().isEmpty() ||
-               contrasenia.getText().isEmpty()){
-            mostrarAlerta("Error!", "Nombre, matricula y contrasenia son obligatorios");
+                nombre.getText().isEmpty() ||
+                contrasenia.getText().isEmpty()) {
+            mostrarAlerta("Error!", "Nombre, matrícula y contraseña son obligatorios");
             return;
         }
         try {
-            //Crear becario
+            //Validar formato de hora
+            LocalTime.parse(horaEntrada.getText());
+            LocalTime.parse(horaSalida.getText());
             Alumno nuevo = new Alumno(
                     matricula.getText(),
                     nombre.getText(),
@@ -65,30 +77,17 @@ public class RegistrarBecarios{
                     cuatrimestre.getText(),
                     contrasenia.getText(),
                     telefono.getText(),
-                    Timestamp.valueOf(horaEntrada.getText()),
-                    Timestamp.valueOf(horaSalida.getText()),
+                    Timestamp.valueOf(LocalDate.now().atTime(LocalTime.parse(horaEntrada.getText()))),
+                    Timestamp.valueOf(LocalDate.now().atTime(LocalTime.parse(horaSalida.getText()))),
                     Date.valueOf(fechaFinalizacion.getValue()),
                     Integer.parseInt(idEn.getText())
             );
-
             AlumnoDao dao = new AlumnoDao();
-
             if (dao.createAlumno(nuevo)) {
-                //Limpiar campos
-                matricula.clear();
-                nombre.clear();
-                aPaterno.clear();
-                aMaterno.clear();
-                carrera.clear();
-                cuatrimestre.clear();
-                contrasenia.clear();
-                telefono.clear();
-                horaEntrada.clear();
-                horaSalida.clear();
-                fechaFinalizacion.setValue(null);
-                idEn.clear();
-
-                //Mensaje de exito
+                matricula.clear(); nombre.clear(); aPaterno.clear(); aMaterno.clear();
+                carrera.clear(); cuatrimestre.clear(); contrasenia.clear();
+                telefono.clear(); horaEntrada.clear(); horaSalida.clear();
+                fechaFinalizacion.setValue(null); idEn.clear();
                 Alert exito = new Alert(Alert.AlertType.INFORMATION);
                 exito.setTitle("Éxito");
                 exito.setHeaderText(null);
@@ -97,9 +96,18 @@ public class RegistrarBecarios{
             } else {
                 mostrarAlerta("Error!", "Becario no se pudo registrar");
             }
-        } catch(Exception e){
-            mostrarAlerta("Error!", "Ocurrio un error inesperado " + e.getMessage());
+        } catch (DateTimeParseException e) {
+            mostrarAlerta("Formato incorrecto", "Asegúrate de ingresar la hora en formato HH:mm:ss");
+        } catch (Exception e){
+            mostrarAlerta("Error!", "Ocurrió un error inesperado: " + e.getMessage());
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void regresarMenu(ActionEvent event){
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
 }
