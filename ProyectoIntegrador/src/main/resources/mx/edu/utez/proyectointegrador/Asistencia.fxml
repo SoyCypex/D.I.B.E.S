@@ -33,13 +33,13 @@
                 <Font name="Arial Bold" size="15.0" />
             </font>
         </Button>
-        <TableView layoutX="149.0" layoutY="209.0" prefHeight="368.0" prefWidth="1146.0">
+        <TableView fx:id="tablaAsistencia" layoutX="149.0" layoutY="209.0" prefHeight="368.0" prefWidth="1146.0">
             <columns>
-                <TableColumn prefWidth="181.0" text="Num_Asistencia" />
-                <TableColumn minWidth="9.0" prefWidth="209.0" text="Matricula" />
-                <TableColumn prefWidth="271.0" text="Fecha" />
-                <TableColumn prefWidth="283.0" text="Hora de entrada" />
-            <TableColumn prefWidth="201.0" text="Hora de salida" />
+                <TableColumn fx:id="tablaNum" prefWidth="181.0" text="Num_Asistencia" />
+                <TableColumn fx:id="tablaMatricula" minWidth="9.0" prefWidth="209.0" text="Matricula" />
+                <TableColumn fx:id="tablaFecha" prefWidth="271.0" text="Fecha" />
+                <TableColumn fx:id="tablaEntrada" prefWidth="283.0" text="Hora de entrada" />
+            <TableColumn fx:id="tablaSalida" prefWidth="201.0" text="Hora de salida" />
             </columns>
         </TableView>
         <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="51.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
@@ -54,12 +54,12 @@
             <image>
                 <Image url="@Images/search.png" />
             </image></ImageView>
-      <Button disable="true" layoutX="652.0" layoutY="591.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
+      <Button fx:id="eliminarAsistencia" disable="true" layoutX="652.0" layoutY="591.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" onAction="#eliminarA" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="1234.0" layoutY="606.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar asistencia">
+      <Button layoutX="1196.0" layoutY="605.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" onAction="#registrarAsistencia" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar asistencia">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

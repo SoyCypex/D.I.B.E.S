@@ -1,45 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="470.0" prefWidth="471.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.RegistrarAsistencia">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="367.0" layoutX="16.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" width="469.0" />
-      <Text layoutX="60.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar asistencia">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="330.0" layoutX="26.0" layoutY="79.0" stroke="BLACK" strokeType="INSIDE" width="420.0" />
+      <Text layoutX="46.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar asistencia">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font></Text>
-      <Button layoutX="158.0" layoutY="470.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
+      <Button layoutX="184.0" layoutY="419.0" mnemonicParsing="false" onAction="#registrarAsistencia" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" styleClass="boton-pequeno-verde" text="Registrar">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font></Button>
-      <TextField layoutX="50.0" layoutY="380.0" prefHeight="35.0" prefWidth="400.0" />
-      <TextField disable="true" layoutX="50.0" layoutY="210.0" prefHeight="35.0" prefWidth="400.0" promptText="MM/DD/YY" />
-      <TextField disable="true" layoutX="50.0" layoutY="295.0" prefHeight="35.0" prefWidth="400.0" />
-      <TextField disable="true" layoutX="50.0" layoutY="126.0" prefHeight="35.0" prefWidth="400.0" promptText="Ingresa matricula" />
-      <Text layoutX="50.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula:">
+      <TextField fx:id="horaSalida" layoutX="37.0" layoutY="360.0" prefHeight="35.0" prefWidth="400.0" promptText="Hora" styleClass="campo-formulario" text="14:00:00" />
+      <TextField fx:id="horaEntrada" layoutX="37.0" layoutY="275.0" prefHeight="35.0" prefWidth="400.0" promptText="Hora" styleClass="campo-formulario" text="07:00:00" />
+      <TextField fx:id="matricula" layoutX="37.0" layoutY="106.0" prefHeight="35.0" prefWidth="400.0" promptText="Ingresa matricula" styleClass="campo-formulario" />
+      <Text layoutX="37.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:">
+      <Text layoutX="38.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de entrada:">
+      <Text layoutX="38.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de entrada:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="45.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de salida:">
+      <Text layoutX="36.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de salida:">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
+      <DatePicker fx:id="fecha" layoutX="37.0" layoutY="195.0" styleClass="date-picker-formulario" />
    </children>
 </AnchorPane>

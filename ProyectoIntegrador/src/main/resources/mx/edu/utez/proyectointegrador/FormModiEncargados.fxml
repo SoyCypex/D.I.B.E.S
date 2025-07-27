@@ -5,43 +5,43 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="517.0" prefWidth="500.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.EditarEncargados">
+<AnchorPane prefHeight="485.0" prefWidth="476.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.EditarEncargados">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="366.0" layoutX="36.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="432.0" />
-      <Text layoutX="128.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificacion">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="366.0" layoutX="22.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="432.0" />
+      <Text layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificacion">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font></Text>
-      <TextField fx:id="nombre" layoutX="51.0" layoutY="87.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre Completo" styleClass="campo-formulario" />
-      <Button layoutX="144.0" layoutY="428.0" mnemonicParsing="false" onAction="#modificar" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" styleClass="boton-verde-grande" text="Modificar">
+      <TextField fx:id="nombre" layoutX="37.0" layoutY="87.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre Completo" styleClass="campo-formulario" />
+      <Button layoutX="183.0" layoutY="436.0" mnemonicParsing="false" onAction="#modificar" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" styleClass="boton-pequeno-verde" text="Modificar">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font></Button>
-      <TextField fx:id="horaEntrada" layoutX="50.0" layoutY="367.0" prefHeight="35.0" prefWidth="400.0" promptText="7:00" styleClass="campo-formulario" text="07:00:00" />
-      <TextField fx:id="correo" layoutX="51.0" layoutY="227.0" prefHeight="35.0" prefWidth="400.0" promptText="ejemplo@utez.edu.mx" styleClass="campo-formulario" />
-      <TextField fx:id="puesto" layoutX="50.0" layoutY="297.0" prefHeight="35.0" prefWidth="400.0" promptText="Maestro" styleClass="campo-formulario" />
-      <TextField fx:id="telefono" layoutX="50.0" layoutY="157.0" prefHeight="35.0" prefWidth="400.0" promptText="Telefono/Celular" styleClass="campo-formulario" />
-      <Text layoutX="51.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
+      <TextField fx:id="horaEntrada" layoutX="36.0" layoutY="367.0" prefHeight="35.0" prefWidth="400.0" promptText="7:00" styleClass="campo-formulario" text="07:00:00" />
+      <TextField fx:id="correo" layoutX="37.0" layoutY="227.0" prefHeight="35.0" prefWidth="400.0" promptText="ejemplo@utez.edu.mx" styleClass="campo-formulario" />
+      <TextField fx:id="puesto" layoutX="36.0" layoutY="297.0" prefHeight="35.0" prefWidth="400.0" promptText="Maestro" styleClass="campo-formulario" />
+      <TextField fx:id="telefono" layoutX="36.0" layoutY="157.0" prefHeight="35.0" prefWidth="400.0" promptText="Telefono/Celular" styleClass="campo-formulario" />
+      <Text layoutX="37.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono">
+      <Text layoutX="37.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo">
+      <Text layoutX="37.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puesto">
+      <Text layoutX="37.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puesto">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora entrada">
+      <Text layoutX="37.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora entrada">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
