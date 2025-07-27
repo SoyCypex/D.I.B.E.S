@@ -33,12 +33,12 @@
                 <Font name="Arial Bold" size="15.0" />
             </font>
         </Button>
-        <TableView layoutX="126.0" layoutY="206.0" prefHeight="368.0" prefWidth="1191.0">
+        <TableView fx:id="tablaFaltas" layoutX="126.0" layoutY="206.0" prefHeight="368.0" prefWidth="1191.0">
             <columns>
-                <TableColumn prefWidth="301.1999969482422" text="ID Falta" />
-                <TableColumn minWidth="9.0" prefWidth="313.1999816894531" text="Matricula" />
-                <TableColumn prefWidth="339.5999755859375" text="Fecha de falta" />
-            <TableColumn prefWidth="234.0" text="Justificada" />
+                <TableColumn fx:id="tablaId" prefWidth="301.1999969482422" text="ID Falta" />
+                <TableColumn fx:id="tablaMatricula" minWidth="9.0" prefWidth="313.1999816894531" text="Matricula" />
+                <TableColumn fx:id="tablaFecha" prefWidth="339.5999755859375" text="Fecha de falta" />
+            <TableColumn fx:id="tablaJustificada" prefWidth="234.0" text="Justificada" />
             </columns>
         </TableView>
         <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
@@ -53,12 +53,12 @@
             <image>
                 <Image url="@Images/search.png" />
             </image></ImageView>
-      <Button layoutX="1273.0" layoutY="619.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar falta">
+      <Button fx:id="registrar" layoutX="1273.0" layoutY="619.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" onAction="#registrarFalta" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar falta">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <Button disable="true" layoutX="652.0" layoutY="589.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
+      <Button fx:id="eliminar" disable="true" layoutX="652.0" layoutY="589.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" onAction="#eliminarFalta" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

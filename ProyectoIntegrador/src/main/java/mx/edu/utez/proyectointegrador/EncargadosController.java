@@ -22,6 +22,7 @@ import java.io.IOException;
 
 import java.net.URL;
 import java.sql.Timestamp;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -59,6 +60,20 @@ public class EncargadosController implements Initializable{
         tablaTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
         tablaCorreo.setCellValueFactory(new PropertyValueFactory<>("correo"));
         tablaHora.setCellValueFactory(new PropertyValueFactory<>("horaEntrada"));
+        tablaHora.setCellFactory(column -> new TableCell<Encargado, Timestamp>() {
+            private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+            @Override
+            protected void updateItem(Timestamp item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.toLocalDateTime().toLocalTime().format(formatter));
+                }
+            }
+        });
+
         tablaPuesto.setCellValueFactory(new PropertyValueFactory<>("puesto"));
         //Pintar los datos
         tablaEncargado.setItems(datosObservables);

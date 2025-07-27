@@ -5,6 +5,9 @@ import javafx.stage.Stage;
 import mx.edu.utez.proyectointegrador.modelo.Encargado;
 import mx.edu.utez.proyectointegrador.modelo.dao.EncargadoDao;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class EditarEncargados {
     @FXML
@@ -30,7 +33,8 @@ public class EditarEncargados {
         telefono.setText(String.valueOf(encargado.getTelefono()));
         correo.setText(String.valueOf(encargado.getCorreo()));
         puesto.setText(String.valueOf(encargado.getPuesto()));
-        horaEntrada.setText(String.valueOf(encargado.getHoraEntrada()));
+        horaEntrada.setText(encargado.getHoraEntrada().toLocalDateTime().toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+
     }
 
     public void modificar(){
@@ -38,7 +42,8 @@ public class EditarEncargados {
         String telefonoE = telefono.getText();
         String correoE = correo.getText();
         String puestoE = puesto.getText();
-        Timestamp horaE = Timestamp.valueOf(horaEntrada.getText());
+        LocalTime hora = LocalTime.parse(horaEntrada.getText());
+        Timestamp horaE = Timestamp.valueOf(LocalDate.now().atTime(hora));
 
         EncargadoDao dao = new EncargadoDao();
         encargado.setNombreCompleto(nombreE);

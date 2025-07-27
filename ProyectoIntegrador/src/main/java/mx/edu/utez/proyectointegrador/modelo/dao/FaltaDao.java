@@ -17,7 +17,7 @@ public class FaltaDao {
             Connection connection = OracleDatabaseConnectionManager.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, f.getMatricula());
-            ps.setTimestamp(2, f.getFechaFalta());
+            ps.setDate(2, f.getFechaFalta());
             ps.setString(3, f.getJustificada());
             int resultado = ps.executeUpdate();
             if(resultado > 0){
@@ -43,7 +43,7 @@ public class FaltaDao {
                 Falta f = new Falta();
                 f.setIdFalta(rs.getInt("ID_FALTA"));
                 f.setMatricula(rs.getString("MATRICULA"));
-                f.setFechaFalta(rs.getTimestamp("FECHA_FALTA"));
+                f.setFechaFalta(rs.getDate("FECHA_DE_FALTA"));
                 f.setJustificada(rs.getString("JUSTIFICADA"));
                 lista.add(f);
             }
@@ -68,12 +68,12 @@ public class FaltaDao {
     public boolean updateFalta(int idFalta, Falta f) {
         //Obtener la conexion
         //Preparar el sql statement
-        String query = "UPDATE LISTA_DE_FALTAS SET MATRICULA=?, FECHA_FALTA=?, JUSTIFICADA=? WHERE ID_FALTA=?";
+        String query = "UPDATE LISTA_DE_FALTAS SET MATRICULA=?, FECHA_DE_FALTA=?, JUSTIFICADA=? WHERE ID_FALTA=?";
         try{
             Connection conn = OracleDatabaseConnectionManager.getConnection();
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, f.getMatricula());
-            ps.setTimestamp(2, f.getFechaFalta());
+            ps.setDate(2, f.getFechaFalta());
             ps.setString(3, f.getJustificada());
             ps.setInt(4, idFalta); //Este es el WHERE ID_FALTA=?
             int resultado = ps.executeUpdate();
@@ -91,7 +91,7 @@ public class FaltaDao {
     //Funcion de eliminar (D) del crud
     public boolean deleteFalta(int idFalta) {
         boolean seBorro = false;
-        String query = "DELETE FROM LISTA_DE_FALTA WHERE ID_FALTA=?";
+        String query = "DELETE FROM LISTA_DE_FALTAS WHERE ID_FALTA=?";
         try{
             Connection conn = OracleDatabaseConnectionManager.getConnection();
             PreparedStatement ps = conn.prepareStatement(query);
