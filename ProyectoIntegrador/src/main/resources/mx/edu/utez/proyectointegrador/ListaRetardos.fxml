@@ -33,14 +33,14 @@
                 <Font name="Arial Bold" size="15.0" />
             </font>
         </Button>
-        <TableView layoutX="132.0" layoutY="206.0" prefHeight="368.0" prefWidth="1191.0">
+        <TableView fx:id="tablaRetardo" layoutX="132.0" layoutY="206.0" prefHeight="368.0" prefWidth="1191.0">
             <columns>
-                <TableColumn prefWidth="238.0" text="Num_Retardo" />
-                <TableColumn minWidth="9.0" prefWidth="151.0" text="Matricula" />
-                <TableColumn prefWidth="249.0" text="Fecha_retardo" />
-                <TableColumn prefWidth="209.0" text="Hora de ingreso" />
-            <TableColumn prefWidth="189.0" text="Tiempo de retardo" />
-            <TableColumn prefWidth="160.0" text="Justificado" />
+                <TableColumn fx:id="tablaNum" prefWidth="238.0" text="Num_Retardo" />
+                <TableColumn fx:id="tablaMatricula" minWidth="9.0" prefWidth="151.0" text="Matricula" />
+                <TableColumn fx:id="tablaFecha" prefWidth="249.0" text="Fecha_retardo" />
+                <TableColumn fx:id="tablaHora" prefWidth="209.0" text="Hora de ingreso" />
+            <TableColumn fx:id="tablaTiempo" prefWidth="189.0" text="Tiempo de retardo" />
+            <TableColumn fx:id="tablaJustificado" prefWidth="160.0" text="Justificado" />
             </columns>
         </TableView>
         <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
@@ -55,12 +55,12 @@
             <image>
                 <Image url="@Images/search.png" />
             </image></ImageView>
-      <Button layoutX="1200.0" layoutY="609.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar retardo">
+      <Button layoutX="1200.0" layoutY="609.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" onAction="#registrarRetardo" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul-compacto" text="Registrar retardo">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
-      <Button disable="true" layoutX="657.0" layoutY="594.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
+      <Button fx:id="eliminar" disable="true" layoutX="657.0" layoutY="594.0" minHeight="30.0" minWidth="140.0" mnemonicParsing="false" onAction="#eliminarRetardo" style="-fx-background-color: #B73122; -fx-text-fill: white;" styleClass="boton-rojo-pequeno" text="Eliminar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

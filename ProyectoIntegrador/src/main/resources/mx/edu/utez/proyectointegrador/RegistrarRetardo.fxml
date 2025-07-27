@@ -5,46 +5,46 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="444.0" prefWidth="458.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.RegistrarRetardos">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="371.0" layoutX="17.0" layoutY="90.0" stroke="BLACK" strokeType="INSIDE" width="469.0" />
-      <Text layoutX="89.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar retardo">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="315.0" layoutX="14.0" layoutY="71.0" stroke="BLACK" strokeType="INSIDE" width="430.0" />
+      <Text layoutX="67.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar retardo">
          <font>
             <Font name="Arial Bold" size="40.0" />
          </font></Text>
-      <TextField layoutX="48.0" layoutY="118.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" />
-      <Button layoutX="158.0" layoutY="481.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" text="Registrar">
+      <TextField fx:id="matricula" layoutX="27.0" layoutY="95.0" prefHeight="35.0" prefWidth="400.0" promptText="Matricula" styleClass="campo-formulario" />
+      <Button layoutX="175.0" layoutY="398.0" mnemonicParsing="false" onAction="#registrarRetardo" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" styleClass="boton-pequeno-verde" text="Registrar">
          <font>
             <Font name="Arial Bold" size="32.0" />
          </font></Button>
-      <TextField layoutX="48.0" layoutY="326.0" prefHeight="35.0" prefWidth="400.0" promptText="5 minutos" />
-      <TextField layoutX="50.0" layoutY="186.0" prefHeight="35.0" prefWidth="400.0" promptText="MM/DD/YY" />
-      <TextField layoutX="52.0" layoutY="257.0" prefHeight="35.0" prefWidth="400.0" promptText="7:05" />
-      <Text layoutX="50.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula">
+      <TextField fx:id="tiempoRetardo" layoutX="30.0" layoutY="275.0" prefHeight="35.0" prefWidth="400.0" promptText="00:10:00" styleClass="campo-formulario" text="00:10:00" />
+      <TextField fx:id="horaIngreso" layoutX="28.0" layoutY="216.0" prefHeight="35.0" prefWidth="400.0" promptText="07:10:00" styleClass="campo-formulario" text="07:10:00" />
+      <Text layoutX="28.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricula">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="47.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de retardo">
+      <Text layoutX="27.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de retardo">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="50.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de ingreso">
+      <Text layoutX="27.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de ingreso">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="50.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo de retardo">
+      <Text layoutX="28.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo de retardo">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="48.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Justificado">
+      <Text layoutX="27.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Justificado">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Text>
-      <TextField layoutX="48.0" layoutY="399.0" prefHeight="35.0" prefWidth="400.0" promptText="Si/No" />
+      <TextField fx:id="justificado" layoutX="28.0" layoutY="335.0" prefHeight="35.0" prefWidth="400.0" promptText="Si/No" styleClass="campo-formulario" />
+      <DatePicker fx:id="fecha" layoutX="25.0" layoutY="156.0" styleClass="date-picker-formulario" />
    </children>
 </AnchorPane>

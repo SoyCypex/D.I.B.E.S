@@ -47,7 +47,7 @@ public class RetardoDao {
                 r.setMatricula(rs.getString("MATRICULA"));
                 r.setFechaRetardo(rs.getDate("FECHA_RETARDO"));
                 r.setHoraEntrada(rs.getTimestamp("HORA_DE_INGRESO"));
-                r.setFechaRetardo(rs.getDate("TIEMPO_DE_RETARDO"));
+                r.setTiempoRetardo(rs.getTimestamp("TIEMPO_DE_RETARDO"));
                 r.setJustificado(rs.getString("JUSTIFICADO"));
                 lista.add(r);
             }
