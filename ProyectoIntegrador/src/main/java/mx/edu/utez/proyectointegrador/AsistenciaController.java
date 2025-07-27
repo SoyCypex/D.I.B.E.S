@@ -19,7 +19,6 @@ import mx.edu.utez.proyectointegrador.modelo.dao.AsistenciaDao;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;

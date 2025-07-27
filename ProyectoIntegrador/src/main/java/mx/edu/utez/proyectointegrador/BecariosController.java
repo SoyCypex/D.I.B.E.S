@@ -21,8 +21,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
+import java.sql.Timestamp;
 
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -39,9 +41,9 @@ public class BecariosController implements Initializable {
     @FXML
     private TableColumn<Alumno,String> tablaCuatri;
     @FXML
-    private TableColumn<Alumno,Time> tablaEntrada;
+    private TableColumn<Alumno,Timestamp> tablaEntrada;
     @FXML
-    private TableColumn<Alumno,Time> tablaSalida;
+    private TableColumn<Alumno,Timestamp> tablaSalida;
     @FXML
     private TableColumn<Alumno, Date> tablaFecha;
     @FXML
@@ -50,6 +52,8 @@ public class BecariosController implements Initializable {
     private Button eliminarBecario;
     @FXML
     private Button abrirRegistrar;
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     @Override
     public void initialize(URL url, ResourceBundle resourseBundle){
@@ -67,6 +71,30 @@ public class BecariosController implements Initializable {
         tablaSalida.setCellValueFactory(new PropertyValueFactory<>("horaSalida"));
         tablaFecha.setCellValueFactory(new PropertyValueFactory<>("fechaFinalizacion"));
         tablaIden.setCellValueFactory(new PropertyValueFactory<>("idEncargado"));
+        //Mostrar solo la hora de entrada
+        tablaEntrada.setCellFactory(column -> new TableCell<Alumno, Timestamp>() {
+            @Override
+            protected void updateItem(Timestamp item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.toLocalDateTime().toLocalTime().format(formatter));
+                }
+            }
+        });
+        //Mostrar solo la hora de salida
+        tablaSalida.setCellFactory(column -> new TableCell<Alumno, Timestamp>() {
+            @Override
+            protected void updateItem(Timestamp item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.toLocalDateTime().toLocalTime().format(formatter));
+                }
+            }
+        });
         //Pintar los datos los datos
         tablaBecario.setItems(datosObservables);
         //Ponerle un evento a la tabla

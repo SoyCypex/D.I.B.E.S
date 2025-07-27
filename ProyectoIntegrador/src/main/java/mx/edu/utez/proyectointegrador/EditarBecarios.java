@@ -8,6 +8,8 @@ import mx.edu.utez.proyectointegrador.modelo.Alumno;
 import mx.edu.utez.proyectointegrador.modelo.dao.AlumnoDao;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class EditarBecarios {
     @FXML
@@ -38,6 +40,8 @@ public class EditarBecarios {
     private Alumno alumno;
     private String matriculaVieja;
 
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
     //Meotodo para obtener el alumno desde la vista Index
     public void setAlumno(Alumno alumno){
         this.alumno=alumno;
@@ -52,8 +56,8 @@ public class EditarBecarios {
         cuatrimestreB.setText(alumno.getCuatrimestreActual());
         contraseniaB.setText(alumno.getContrasenia());
         telefonoB.setText(alumno.getTelefono());
-        horaEntradaB.setText(String.valueOf(alumno.getHoraEntrada()));
-        horaSalidaB.setText(String.valueOf(alumno.getHoraSalida()));
+        horaEntradaB.setText(alumno.getHoraEntrada().toLocalDateTime().toLocalTime().format(formatter));
+        horaSalidaB.setText(alumno.getHoraSalida().toLocalDateTime().toLocalTime().format(formatter));
         fechaFinalizacionB.setValue(alumno.getFechaFinalizacion().toLocalDate());
         idEncargadoB.setText(String.valueOf(alumno.getIdEncargado()));
     }
@@ -66,11 +70,16 @@ public class EditarBecarios {
         String cuatrimestre = cuatrimestreB.getText();
         String contrasenia = contraseniaB.getText();
         String telefono = telefonoB.getText();
-        Timestamp horaEntrada = Timestamp.valueOf(horaEntradaB.getText());
-        Timestamp horaSalida = Timestamp.valueOf(horaSalidaB.getText());
+        //Obtener hora como texto
+        String entradaText = horaEntradaB.getText();
+        String salidaText = horaSalidaB.getText();
+        //Construir Timestamp con la fecha actual
+        LocalDate hoy = LocalDate.now();
+        Timestamp horaEntrada = Timestamp.valueOf(hoy + " " + entradaText);
+        Timestamp horaSalida = Timestamp.valueOf(hoy + " " + salidaText);
         Date fechaFinalizacion = Date.valueOf(fechaFinalizacionB.getValue());
         int idEncargado = Integer.parseInt(idEncargadoB.getText());
-
+        //Actualizar datos del alumno
         alumno.setMatricula(matriculaVieja);
         alumno.setNombre(nombre);
         alumno.setApellidoPaterno(aPaterno);
@@ -83,12 +92,11 @@ public class EditarBecarios {
         alumno.setHoraSalida(horaSalida);
         alumno.setFechaFinalizacion(fechaFinalizacion);
         alumno.setIdEncargado(idEncargado);
-
+        //Llamar DAO para guardar
         AlumnoDao dao = new AlumnoDao();
         dao.updateAlumno(matriculaVieja, alumno);
-
+        //Cerrar ventana
         Stage stage = (Stage) matriculaB.getScene().getWindow();
         stage.close();
     }
-
 }
