@@ -1,5 +1,6 @@
 package mx.edu.utez.proyectointegrador.modelo.dao;
 
+import javafx.scene.control.Alert;
 import mx.edu.utez.proyectointegrador.modelo.Falta;
 import mx.edu.utez.proyectointegrador.utils.OracleDatabaseConnectionManager;
 
@@ -103,6 +104,49 @@ public class FaltaDao {
             e.printStackTrace();
         }
         return seBorro;
+    }
+
+    public List<Falta> readFaltasEspecificas(String filtro, String valorBusqueda){
+        List<Falta> lista = new ArrayList<>();
+        try{
+            Connection conn = OracleDatabaseConnectionManager.getConnection();
+            String query = "";
+            switch (filtro){
+                case "Todos" -> query = "SELECT * FROM LISTA_DE_FALTAS ORDER BY ID_FALTA ASC";
+                case "Matricula" -> query = "SELECT * FROM LISTA_DE_FALTAS WHERE MATRICULA LIKE ? ORDER BY ID_FALTA ASC";
+                case "Fecha" -> query = "SELECT * FROM LISTA_DE_FALTAS WHERE TRUNC(FECHA_DE_FALTA) = TO_DATE(?, 'YYYY-MM-DD') ORDER BY ID_FALTA ASC";
+                case "Justificada" -> query = "SELECT * FROM LISTA_DE_FALTAS WHERE JUSTIFICADA LIKE ? ORDER BY ID_FALTA ASC";
+                default -> throw new IllegalArgumentException("Filtro inválido: " + filtro);
+            }
+            PreparedStatement ps = conn.prepareStatement(query);
+            if (!filtro.equals("Todos")) {
+                if (filtro.equals("Fecha")) {
+                    ps.setString(1, valorBusqueda); //formato 'YYYY-MM-DD'
+                } else {
+                    ps.setString(1, "%" + valorBusqueda + "%"); //para LIKE en otros casos
+                }
+            }
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Falta f = new Falta();
+                f.setIdFalta(rs.getInt("ID_FALTA"));
+                f.setMatricula(rs.getString("MATRICULA"));
+                f.setFechaFalta(rs.getDate("FECHA_DE_FALTA"));
+                f.setJustificada(rs.getString("JUSTIFICADA"));
+                lista.add(f);
+            }
+            rs.close();
+            ps.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error de busqueda");
+            error.setHeaderText(null);
+            error.setContentText("Error de formato de busqueda");
+            error.showAndWait();
+        }
+        return lista;
     }
 
 }

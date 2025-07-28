@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.concurrent.Task;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,6 +28,14 @@ import java.util.List;
 
 public class ListaFaltasController implements Initializable{
     @FXML
+    private TextField buscador;
+    @FXML
+    private Button botonBuscar;
+    @FXML
+    private ProgressIndicator spinner;
+    @FXML
+    private ChoiceBox<String> filtro;
+    @FXML
     private TableView<Falta> tablaFaltas;
     @FXML
     private TableColumn<Falta,Integer> tablaId;
@@ -43,6 +52,8 @@ public class ListaFaltasController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+        filtro.setItems(FXCollections.observableArrayList("Todos", "Matricula", "Fecha", "Justificada"));
+        filtro.getSelectionModel().selectFirst(); //Selecciona la primera por defecto
         FaltaDao dao = new FaltaDao();
         List<Falta> datos = dao.readFalta();
         Tooltip tooltip = new Tooltip("Doble clic para editar • Backspace o 'Eliminar' para borrar");
@@ -153,4 +164,39 @@ public class ListaFaltasController implements Initializable{
             e.printStackTrace();
         }
     }
+
+     public void buscar(ActionEvent event) {
+        String filtroSeleccionado = filtro.getValue();
+        String textoBusqueda = buscador.getText().trim();
+        if (filtroSeleccionado == null) return;
+        if (filtroSeleccionado.equals("Todos")) {
+            textoBusqueda = ""; //no se usará pero igual lo pasamos
+        }
+        //Aquí hacemos la variable efectivamente final
+        final String finalFiltro = filtroSeleccionado;
+        final String finalTextoBusqueda = textoBusqueda;
+        FaltaDao dao = new FaltaDao();
+        spinner.setVisible(true);
+        botonBuscar.setDisable(true);
+        Task<List<Falta>> tareaBusqueda = new Task<>() {
+            @Override
+            protected List<Falta> call() throws Exception {
+                return dao.readFaltasEspecificas(finalFiltro, finalTextoBusqueda);
+            }
+        };
+        tareaBusqueda.setOnFailed(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            tareaBusqueda.getException().printStackTrace();
+        });
+        tareaBusqueda.setOnSucceeded(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            List<Falta> resultados = tareaBusqueda.getValue();
+            tablaFaltas.setItems(FXCollections.observableArrayList(resultados));
+            tablaFaltas.refresh();
+        });
+        new Thread(tareaBusqueda).start();
+    }
+
 }
