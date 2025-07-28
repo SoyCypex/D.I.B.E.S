@@ -24,7 +24,7 @@
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Text>
-      <TextField fx:id="buscador" layoutX="461.0" layoutY="98.0" minHeight="45.0" minWidth="490.0" styleClass="buscador">
+      <TextField fx:id="buscador" layoutX="461.0" layoutY="98.0" minHeight="45.0" minWidth="490.0" promptText="Selecciona un filtro para buscar &gt;" styleClass="buscador">
          <font>
             <Font name="Arial" size="12.0" />
          </font></TextField>

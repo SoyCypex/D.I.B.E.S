@@ -1,5 +1,6 @@
 package mx.edu.utez.proyectointegrador.modelo.dao;
 
+import javafx.scene.control.Alert;
 import mx.edu.utez.proyectointegrador.modelo.Asistencia;
 import mx.edu.utez.proyectointegrador.utils.OracleDatabaseConnectionManager;
 
@@ -106,6 +107,48 @@ public class AsistenciaDao {
             e.printStackTrace();
         }
         return seBorro;
+    }
+
+    public List<Asistencia> readAsistenciasEspecificas(String filtro, String valorBusqueda){
+        List<Asistencia> lista = new ArrayList<>();
+        try{
+            Connection conn = OracleDatabaseConnectionManager.getConnection();
+            String query = "";
+            switch (filtro){
+                case "Todos" -> query = "SELECT * FROM LISTA_DE_ASISTENCIA ORDER BY NUM_REGISTRO ASC";
+                case "Matricula" -> query = "SELECT * FROM LISTA_DE_ASISTENCIA WHERE MATRICULA LIKE ? ORDER BY NUM_REGISTRO ASC";
+                case "Fecha" -> query = "SELECT * FROM LISTA_DE_ASISTENCIA WHERE TRUNC(FECHA) = TO_DATE(?, 'YYYY-MM-DD') ORDER BY NUM_REGISTRO ASC";
+                case "Hora de entrada" -> query = "SELECT * FROM LISTA_DE_ASISTENCIA WHERE TO_CHAR(HORA_ENTRADA, 'HH24:MI') LIKE ? ORDER BY NUM_REGISTRO";
+                case "Hora de salida" -> query = "SELECT * FROM LISTA_DE_ASISTENCIA WHERE TO_CHAR(HORA_SALIDA, 'HH24:MI') LIKE ? ORDER BY NUM_REGISTRO ASC";
+                default -> throw new IllegalArgumentException("Filtro inválido: " + filtro);
+            }
+            PreparedStatement ps = conn.prepareStatement(query);
+            if (filtro.equals("Fecha")) {
+                ps.setString(1, valorBusqueda); // formato 'YYYY-MM-DD'
+            } else {
+                ps.setString(1, "%" + valorBusqueda + "%"); // para LIKE en otros casos
+            }
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Asistencia a = new Asistencia();
+                a.setMatricula(rs.getString("MATRICULA"));
+                a.setFecha(rs.getDate("FECHA"));
+                a.setHoraEntrada(rs.getTimestamp("HORA_ENTRADA"));
+                a.setHoraSalida(rs.getTimestamp("HORA_SALIDA"));
+                lista.add(a);
+            }
+            rs.close();
+            ps.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error de busqueda");
+            error.setHeaderText(null);
+            error.setContentText("Error de formato de busqueda");
+            error.showAndWait();
+        }
+        return lista;
     }
 
 }

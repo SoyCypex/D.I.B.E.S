@@ -2,6 +2,7 @@ package mx.edu.utez.proyectointegrador;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +31,14 @@ public class AsistenciaController implements Initializable{
     @FXML
     private Button menu;
     @FXML
+    private TextField buscador;
+    @FXML
+    private Button botonBuscar;
+    @FXML
+    private ProgressIndicator spinner;
+    @FXML
+    private ChoiceBox<String> filtro;
+    @FXML
     private TableView<Asistencia> tablaAsistencia;
     @FXML
     private TableColumn<Asistencia,Integer> tablaNum;
@@ -49,6 +58,8 @@ public class AsistenciaController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+        filtro.setItems(FXCollections.observableArrayList("Todos", "Matricula", "Fecha", "Hora de entrada", "Hora de salida"));
+        filtro.getSelectionModel().selectFirst(); //Selecciona la primera por defecto
         AsistenciaDao dao = new AsistenciaDao();
         List<Asistencia> datos = dao.readAsistencia();
         Tooltip tooltip = new Tooltip("Doble clic para editar • Backspace o 'Eliminar' para borrar");
@@ -182,4 +193,33 @@ public class AsistenciaController implements Initializable{
             e.printStackTrace();
         }
     }
+
+    public void buscar(ActionEvent event){
+        String filtroSeleccionado = filtro.getValue();
+        String textoBusqueda = buscador.getText();
+        if (filtroSeleccionado == null || textoBusqueda.isBlank()) return;
+        AsistenciaDao dao = new AsistenciaDao();
+        spinner.setVisible(true);
+        botonBuscar.setDisable(true);
+        Task<List<Asistencia>> tareaBusqueda = new Task<>() {
+            @Override
+            protected List<Asistencia> call() throws Exception {
+                return dao.readAsistenciasEspecificas(filtroSeleccionado, textoBusqueda);
+            }
+        };
+        tareaBusqueda.setOnFailed(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            tareaBusqueda.getException().printStackTrace();
+        });
+        tareaBusqueda.setOnSucceeded(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            List<Asistencia> resultados = tareaBusqueda.getValue();
+            tablaAsistencia.setItems(FXCollections.observableArrayList(resultados));
+            tablaAsistencia.refresh();
+        });
+        new Thread(tareaBusqueda).start();
+    }
+
 }
