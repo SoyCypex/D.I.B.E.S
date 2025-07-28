@@ -1,5 +1,6 @@
 package mx.edu.utez.proyectointegrador.modelo.dao;
 
+import javafx.scene.control.Alert;
 import mx.edu.utez.proyectointegrador.modelo.Retardo;
 import mx.edu.utez.proyectointegrador.utils.OracleDatabaseConnectionManager;
 
@@ -109,6 +110,53 @@ public class RetardoDao {
             e.printStackTrace();
         }
         return seBorro;
+    }
+
+    public List<Retardo> readRetardosEspecificos(String filtro, String valorBusqueda){
+        List<Retardo> lista = new ArrayList<>();
+        try{
+            Connection conn = OracleDatabaseConnectionManager.getConnection();
+            String query = "";
+            switch (filtro){
+                case "Todos" -> query = "SELECT * FROM RETARDOS ORDER BY NUM_RETARDO ASC";
+                case "Matricula" -> query = "SELECT * FROM RETARDOS WHERE MATRICULA LIKE ? ORDER BY NUM_RETARDO ASC";
+                case "Fecha" -> query = "SELECT * FROM RETARDOS WHERE TRUNC(FECHA_RETARDO) = TO_DATE(?, 'YYYY-MM-DD') ORDER BY NUM_RETARDO ASC";
+                case "Hora" -> query = "SELECT * FROM RETARDOS WHERE TO_CHAR(HORA_DE_INGRESO, 'HH24:MI') LIKE ? ORDER BY NUM_RETARDO ASC";
+                case "Tiempo" -> query = "SELECT * FROM RETARDOS WHERE TO_CHAR(TIEMPO_DE_RETARDO, 'HH24:MI') LIKE ? ORDER BY NUM_RETARDO ASC";
+                case "Justificado" -> query = "SELECT * FROM RETARDOS WHERE JUSTIFICADO LIKE ? ORDER BY NUM_RETARDO ASC";
+                default -> throw new IllegalArgumentException("Filtro inválido: " + filtro);
+            }
+            PreparedStatement ps = conn.prepareStatement(query);
+            if (!filtro.equals("Todos")) {
+                if (filtro.equals("Fecha")) {
+                    ps.setString(1, valorBusqueda); //ya formateado tipo 'YYYY-MM-DD'
+                } else {
+                    ps.setString(1, "%" + valorBusqueda + "%");
+                }
+            }
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Retardo r = new Retardo();
+                r.setNumRetardo(rs.getInt("NUM_RETARDO"));
+                r.setMatricula(rs.getString("MATRICULA"));
+                r.setFechaRetardo(rs.getDate("FECHA_RETARDO"));
+                r.setHoraEntrada(rs.getTimestamp("HORA_DE_INGRESO"));
+                r.setTiempoRetardo(rs.getTimestamp("TIEMPO_DE_RETARDO"));
+                r.setJustificado(rs.getString("JUSTIFICADO"));
+                lista.add(r);
+            }
+            rs.close();
+            ps.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error de busqueda");
+            error.setHeaderText(null);
+            error.setContentText("Error de formato de busqueda");
+            error.showAndWait();
+        }
+        return lista;
     }
 
 }

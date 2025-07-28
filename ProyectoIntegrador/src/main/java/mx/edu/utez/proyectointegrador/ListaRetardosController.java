@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,6 +28,14 @@ import java.util.ResourceBundle;
 import java.util.List;
 
 public class ListaRetardosController implements Initializable{
+    @FXML
+    private TextField buscador;
+    @FXML
+    private Button botonBuscar;
+    @FXML
+    private ProgressIndicator spinner;
+    @FXML
+    private ChoiceBox<String> filtro;
     @FXML
     private TableView<Retardo> tablaRetardo;
     @FXML
@@ -51,6 +60,8 @@ public class ListaRetardosController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+        filtro.setItems(FXCollections.observableArrayList("Todos", "Matricula", "Fecha", "Hora", "Tiempo", "Justificado"));
+        filtro.getSelectionModel().selectFirst(); //Selecciona la primera por defecto
         RetardoDao dao = new RetardoDao();
         List<Retardo> datos = dao.readRetardo();
         Tooltip tooltip = new Tooltip("Doble clic para editar • Backspace o 'Eliminar' para borrar");
@@ -185,4 +196,39 @@ public class ListaRetardosController implements Initializable{
             e.printStackTrace();
         }
     }
+
+    public void buscar(ActionEvent event) {
+        String filtroSeleccionado = filtro.getValue();
+        String textoBusqueda = buscador.getText().trim();
+        if (filtroSeleccionado == null) return;
+        if (filtroSeleccionado.equals("Todos")) {
+            textoBusqueda = ""; //no se usará pero igual lo pasamos
+        }
+        //Aquí hacemos la variable efectivamente final
+        final String finalFiltro = filtroSeleccionado;
+        final String finalTextoBusqueda = textoBusqueda;
+        RetardoDao dao = new RetardoDao();
+        spinner.setVisible(true);
+        botonBuscar.setDisable(true);
+        Task<List<Retardo>> tareaBusqueda = new Task<>() {
+            @Override
+            protected List<Retardo> call() throws Exception {
+                return dao.readRetardosEspecificos(finalFiltro, finalTextoBusqueda);
+            }
+        };
+        tareaBusqueda.setOnFailed(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            tareaBusqueda.getException().printStackTrace();
+        });
+        tareaBusqueda.setOnSucceeded(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            List<Retardo> resultados = tareaBusqueda.getValue();
+            tablaRetardo.setItems(FXCollections.observableArrayList(resultados));
+            tablaRetardo.refresh();
+        });
+        new Thread(tareaBusqueda).start();
+    }
+
 }
