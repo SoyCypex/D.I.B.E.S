@@ -66,7 +66,7 @@ public class BecariosController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourseBundle){
-        filtro.setItems(FXCollections.observableArrayList("Matricula", "Nombre", "Carrera", "Cuatrimestre", "Hora Entrada", "Hora Salida", "Fecha", "ID encargado"));
+        filtro.setItems(FXCollections.observableArrayList("Todos", "Matricula", "Nombre", "Carrera", "Cuatrimestre", "Hora Entrada", "Hora Salida", "Fecha", "ID encargado"));
         filtro.getSelectionModel().selectFirst(); //Selecciona la primera por defecto
         AlumnoDao dao = new AlumnoDao();
         List<Alumno> datos = dao.readAlumnos();
@@ -214,17 +214,23 @@ public class BecariosController implements Initializable {
         }
     }
 
-    public void buscar(ActionEvent event){
+    public void buscar(ActionEvent event) {
         String filtroSeleccionado = filtro.getValue();
-        String textoBusqueda = buscador.getText();
-        if (filtroSeleccionado == null || textoBusqueda.isBlank()) return;
+        String textoBusqueda = buscador.getText().trim();
+        if (filtroSeleccionado == null) return;
+        if (filtroSeleccionado.equals("Todos")) {
+            textoBusqueda = ""; //no se usará pero igual lo pasamos
+        }
+        //Aquí hacemos la variable efectivamente final
+        final String finalFiltro = filtroSeleccionado;
+        final String finalTextoBusqueda = textoBusqueda;
         AlumnoDao dao = new AlumnoDao();
         spinner.setVisible(true);
         botonBuscar.setDisable(true);
         Task<List<Alumno>> tareaBusqueda = new Task<>() {
             @Override
             protected List<Alumno> call() throws Exception {
-                return dao.readAlumnosEspecificos(filtroSeleccionado, textoBusqueda);
+                return dao.readAlumnosEspecificos(finalFiltro, finalTextoBusqueda);
             }
         };
         tareaBusqueda.setOnFailed(e -> {

@@ -194,17 +194,23 @@ public class AsistenciaController implements Initializable{
         }
     }
 
-    public void buscar(ActionEvent event){
+    public void buscar(ActionEvent event) {
         String filtroSeleccionado = filtro.getValue();
-        String textoBusqueda = buscador.getText();
-        if (filtroSeleccionado == null || textoBusqueda.isBlank()) return;
+        String textoBusqueda = buscador.getText().trim();
+        if (filtroSeleccionado == null) return;
+        if (filtroSeleccionado.equals("Todos")) {
+            textoBusqueda = ""; //no se usará pero igual lo pasamos
+        }
+        //Aquí hacemos la variable efectivamente final
+        final String finalFiltro = filtroSeleccionado;
+        final String finalTextoBusqueda = textoBusqueda;
         AsistenciaDao dao = new AsistenciaDao();
         spinner.setVisible(true);
         botonBuscar.setDisable(true);
         Task<List<Asistencia>> tareaBusqueda = new Task<>() {
             @Override
             protected List<Asistencia> call() throws Exception {
-                return dao.readAsistenciasEspecificas(filtroSeleccionado, textoBusqueda);
+                return dao.readAsistenciasEspecificas(finalFiltro, finalTextoBusqueda);
             }
         };
         tareaBusqueda.setOnFailed(e -> {

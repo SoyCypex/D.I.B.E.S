@@ -212,6 +212,7 @@ public class AlumnoDao {
             Connection conn = OracleDatabaseConnectionManager.getConnection();
             String query = "";
             switch (filtro) {
+                case "Todos" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS ORDER BY MATRICULA ASC";
                 case "Matricula" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE MATRICULA LIKE ? ORDER BY MATRICULA ASC";
                 case "Nombre" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE NOMBRE LIKE ? ORDER BY MATRICULA ASC";
                 case "Carrera" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE CARRERA LIKE ? ORDER BY MATRICULA ASC";
@@ -223,12 +224,14 @@ public class AlumnoDao {
                 default -> throw new IllegalArgumentException("Filtro inválido: " + filtro);
             }
             PreparedStatement ps = conn.prepareStatement(query);
-            if (filtro.equals("Fecha")) {
-                ps.setString(1, valorBusqueda); //Se espera 'YYYY-MM-DD'
-            } else if (filtro.equals("ID encargado")) {
-                ps.setInt(1, Integer.parseInt(valorBusqueda));
-            } else {
-                ps.setString(1, "%" + valorBusqueda + "%");
+            if (!filtro.equals("Todos")) {
+                if (filtro.equals("Fecha")) {
+                    ps.setString(1, valorBusqueda); //Se espera 'YYYY-MM-DD'
+                } else if (filtro.equals("ID encargado")) {
+                    ps.setInt(1, Integer.parseInt(valorBusqueda));
+                } else {
+                    ps.setString(1, "%" + valorBusqueda + "%");
+                }
             }
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

@@ -1,5 +1,6 @@
 package mx.edu.utez.proyectointegrador.modelo.dao;
 
+import javafx.scene.control.Alert;
 import mx.edu.utez.proyectointegrador.modelo.Encargado;
 import mx.edu.utez.proyectointegrador.utils.OracleDatabaseConnectionManager;
 
@@ -112,4 +113,51 @@ public class EncargadoDao {
         }
         return seBorro;
     }
+    public List<Encargado> readEncargadosEspecificos(String filtro, String valorBusqueda){
+        List<Encargado> lista = new ArrayList<>();
+        try{
+            Connection conn = OracleDatabaseConnectionManager.getConnection();
+            String query = "";
+            switch (filtro){
+                case "Todos" -> query = "SELECT ID_ENCARGADO, NOMBRE_COMPLETO, TELEFONO, CORREO, PUESTO, HORA_ENTRADA FROM ENCARGADOS ORDER BY ID_ENCARGADO ASC";
+                case "Nombre" -> query = "SELECT ID_ENCARGADO, NOMBRE_COMPLETO, TELEFONO, CORREO, PUESTO, HORA_ENTRADA FROM ENCARGADOS WHERE NOMBRE_COMPLETO LIKE ? ORDER BY ID_ENCARGADO ASC";
+                case "Telefono" -> query = "SELECT ID_ENCARGADO, NOMBRE_COMPLETO, TELEFONO, CORREO, PUESTO, HORA_ENTRADA FROM ENCARGADOS WHERE TELEFONO LIKE ? ORDER BY ID_ENCARGADO ASC";
+                case "Correo" -> query = "SELECT ID_ENCARGADO, NOMBRE_COMPLETO, TELEFONO, CORREO, PUESTO, HORA_ENTRADA FROM ENCARGADOS WHERE CORREO LIKE ? ORDER BY ID_ENCARGADO ASC";
+                case "Hora entrada" -> query = "SELECT ID_ENCARGADO, NOMBRE_COMPLETO, TELEFONO, CORREO, PUESTO, HORA_ENTRADA FROM ENCARGADOS WHERE TO_CHAR(HORA_ENTRADA, 'HH24:MI') LIKE ? ORDER BY ID_ENCARGADO ASC";
+                case "Puesto" -> query = "SELECT ID_ENCARGADO, NOMBRE_COMPLETO, TELEFONO, CORREO, PUESTO, HORA_ENTRADA FROM ENCARGADOS WHERE PUESTO LIKE ? ORDER BY ID_ENCARGADO ASC";
+                default -> throw new IllegalArgumentException("Filtro inválido: " + filtro);
+            }
+            PreparedStatement ps = conn.prepareStatement(query);
+            if (!filtro.equals("Todos")) {
+                if (filtro.equals("Hora entrada")) {
+                    ps.setString(1, valorBusqueda); //ya formateado tipo 'HH24:MI'
+                } else {
+                    ps.setString(1, "%" + valorBusqueda + "%");
+                }
+            }
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Encargado e = new Encargado();
+                e.setIdEncargado(rs.getInt("ID_ENCARGADO"));
+                e.setNombreCompleto(rs.getString("NOMBRE_COMPLETO"));
+                e.setTelefono(rs.getString("TELEFONO"));
+                e.setCorreo(rs.getString("CORREO"));
+                e.setHoraEntrada(rs.getTimestamp("HORA_ENTRADA"));
+                e.setPuesto(rs.getString("PUESTO"));
+                lista.add(e);
+            }
+            rs.close();
+            ps.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error de busqueda");
+            error.setHeaderText(null);
+            error.setContentText("Error de formato de busqueda");
+            error.showAndWait();
+        }
+        return lista;
+    }
+
 }

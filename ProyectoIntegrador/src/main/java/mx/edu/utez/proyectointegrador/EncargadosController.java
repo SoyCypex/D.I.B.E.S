@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.concurrent.Task;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -30,6 +31,14 @@ import java.util.ResourceBundle;
 
 public class EncargadosController implements Initializable{
     @FXML
+    private Button botonBuscar;
+    @FXML
+    private ProgressIndicator spinner;
+    @FXML
+    private ChoiceBox<String> filtro;
+    @FXML
+    private TextField buscador;
+    @FXML
     private Button menu;
     @FXML
     private TableView<Encargado> tablaEncargado;
@@ -49,6 +58,8 @@ public class EncargadosController implements Initializable{
     private Button eliminar;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        filtro.setItems(FXCollections.observableArrayList("Todos", "Nombre", "Telefono", "Correo", "Hora entrada", "Puesto"));
+        filtro.getSelectionModel().selectFirst(); //Selecciona la primera por defecto
         EncargadoDao dao = new EncargadoDao();
         List<Encargado> datos = dao.readEncargado();
         Tooltip tooltip = new Tooltip("Doble clic para editar • Backspace o 'Eliminar' para borrar");
@@ -175,4 +186,39 @@ public class EncargadosController implements Initializable{
             e.printStackTrace();
         }
     }
+
+    public void buscar(ActionEvent event) {
+        String filtroSeleccionado = filtro.getValue();
+        String textoBusqueda = buscador.getText().trim();
+        if (filtroSeleccionado == null) return;
+        if (filtroSeleccionado.equals("Todos")) {
+            textoBusqueda = ""; // no se usará pero igual lo pasamos
+        }
+        // Aquí hacemos la variable efectivamente final
+        final String finalFiltro = filtroSeleccionado;
+        final String finalTextoBusqueda = textoBusqueda;
+        EncargadoDao dao = new EncargadoDao();
+        spinner.setVisible(true);
+        botonBuscar.setDisable(true);
+        Task<List<Encargado>> tareaBusqueda = new Task<>() {
+            @Override
+            protected List<Encargado> call() throws Exception {
+                return dao.readEncargadosEspecificos(finalFiltro, finalTextoBusqueda);
+            }
+        };
+        tareaBusqueda.setOnFailed(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            tareaBusqueda.getException().printStackTrace();
+        });
+        tareaBusqueda.setOnSucceeded(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            List<Encargado> resultados = tareaBusqueda.getValue();
+            tablaEncargado.setItems(FXCollections.observableArrayList(resultados));
+            tablaEncargado.refresh();
+        });
+        new Thread(tareaBusqueda).start();
+    }
+
 }

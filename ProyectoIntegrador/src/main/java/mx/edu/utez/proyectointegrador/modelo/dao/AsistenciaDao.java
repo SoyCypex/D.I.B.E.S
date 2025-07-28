@@ -123,10 +123,12 @@ public class AsistenciaDao {
                 default -> throw new IllegalArgumentException("Filtro inválido: " + filtro);
             }
             PreparedStatement ps = conn.prepareStatement(query);
-            if (filtro.equals("Fecha")) {
-                ps.setString(1, valorBusqueda); // formato 'YYYY-MM-DD'
-            } else {
-                ps.setString(1, "%" + valorBusqueda + "%"); // para LIKE en otros casos
+            if (!filtro.equals("Todos")) {
+                if (filtro.equals("Fecha")) {
+                    ps.setString(1, valorBusqueda); //formato 'YYYY-MM-DD'
+                } else {
+                    ps.setString(1, "%" + valorBusqueda + "%"); //para LIKE en otros casos
+                }
             }
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
