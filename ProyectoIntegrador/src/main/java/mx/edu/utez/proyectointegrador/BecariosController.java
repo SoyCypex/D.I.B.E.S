@@ -10,6 +10,7 @@ import mx.edu.utez.proyectointegrador.modelo.dao.AlumnoDao;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,6 +31,14 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class BecariosController implements Initializable {
+    @FXML
+    private ChoiceBox<String> filtro;
+    @FXML
+    private TextField buscador;
+    @FXML
+    private Button botonBuscar;
+    @FXML
+    private ProgressIndicator spinner;
     @FXML
     private TableView<Alumno> tablaBecario;
     @FXML
@@ -57,6 +66,8 @@ public class BecariosController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourseBundle){
+        filtro.setItems(FXCollections.observableArrayList("Matricula", "Nombre", "Carrera", "Cuatrimestre", "Hora Entrada", "Hora Salida", "Fecha", "ID encargado"));
+        filtro.getSelectionModel().selectFirst(); //Selecciona la primera por defecto
         AlumnoDao dao = new AlumnoDao();
         List<Alumno> datos = dao.readAlumnos();
         Tooltip tooltip = new Tooltip("Doble clic para editar • Backspace o 'Eliminar' para borrar");
@@ -201,6 +212,34 @@ public class BecariosController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void buscar(ActionEvent event){
+        String filtroSeleccionado = filtro.getValue();
+        String textoBusqueda = buscador.getText();
+        if (filtroSeleccionado == null || textoBusqueda.isBlank()) return;
+        AlumnoDao dao = new AlumnoDao();
+        spinner.setVisible(true);
+        botonBuscar.setDisable(true);
+        Task<List<Alumno>> tareaBusqueda = new Task<>() {
+            @Override
+            protected List<Alumno> call() throws Exception {
+                return dao.readAlumnosEspecificos(filtroSeleccionado, textoBusqueda);
+            }
+        };
+        tareaBusqueda.setOnFailed(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            tareaBusqueda.getException().printStackTrace();
+        });
+        tareaBusqueda.setOnSucceeded(e -> {
+            spinner.setVisible(false);
+            botonBuscar.setDisable(false);
+            List<Alumno> resultados = tareaBusqueda.getValue();
+            tablaBecario.setItems(FXCollections.observableArrayList(resultados));
+            tablaBecario.refresh();
+        });
+        new Thread(tareaBusqueda).start();
     }
 
 }

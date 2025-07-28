@@ -24,11 +24,11 @@
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Text>
-      <TextField fx:id="buscarBecario" layoutX="461.0" layoutY="98.0" minHeight="45.0" minWidth="490.0" styleClass="buscador">
+      <TextField fx:id="buscador" layoutX="461.0" layoutY="98.0" minHeight="45.0" minWidth="490.0" styleClass="buscador">
          <font>
             <Font name="Arial" size="12.0" />
          </font></TextField>
-      <Button fx:id="botonBuscar" layoutX="651.0" layoutY="154.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" style="-fx-background-color: #D9D9D9; -fx-text-fill: black;" styleClass="boton-gris" text="Buscar">
+      <Button fx:id="botonBuscar" layoutX="651.0" layoutY="154.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onAction="#buscar" style="-fx-background-color: #D9D9D9; -fx-text-fill: black;" styleClass="boton-gris" text="Buscar">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
@@ -67,5 +67,7 @@
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
+      <ChoiceBox fx:id="filtro" layoutX="958.0" layoutY="108.0" prefWidth="150.0" styleClass="choicebox-formulario" />
+      <ProgressIndicator fx:id="spinner" layoutX="681.0" layoutY="115.0" visible="false" />
    </children>
 </AnchorPane>

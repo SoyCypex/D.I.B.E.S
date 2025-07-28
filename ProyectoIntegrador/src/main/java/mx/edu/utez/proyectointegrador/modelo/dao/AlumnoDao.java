@@ -1,6 +1,8 @@
 package mx.edu.utez.proyectointegrador.modelo.dao;
 
+import javafx.scene.control.Alert;
 import mx.edu.utez.proyectointegrador.modelo.Alumno;
+import mx.edu.utez.proyectointegrador.utils.OracleDatabaseConnectionManager;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -203,4 +205,55 @@ public class AlumnoDao {
         }
         return null;
     }
+
+    public List<Alumno> readAlumnosEspecificos(String filtro, String valorBusqueda) {
+        List<Alumno> lista = new ArrayList<>();
+        try {
+            Connection conn = OracleDatabaseConnectionManager.getConnection();
+            String query = "";
+            switch (filtro) {
+                case "Matricula" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE MATRICULA LIKE ? ORDER BY MATRICULA ASC";
+                case "Nombre" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE NOMBRE LIKE ? ORDER BY MATRICULA ASC";
+                case "Carrera" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE CARRERA LIKE ? ORDER BY MATRICULA ASC";
+                case "Cuatrimestre" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE CUATRIMESTRE_ACTUAL LIKE ? ORDER BY MATRICULA ASC";
+                case "Hora Entrada" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE TO_CHAR(HORA_ENTRADA, 'HH24:MI') LIKE ? ORDER BY MATRICULA ASC";
+                case "Hora Salida" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE TO_CHAR(HORA_SALIDA, 'HH24:MI') LIKE ? ORDER BY MATRICULA ASC";
+                case "Fecha" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE TRUNC(FECHA_FINALIZACION) = TO_DATE(?, 'YYYY-MM-DD') ORDER BY MATRICULA ASC";
+                case "ID encargado" -> query = "SELECT MATRICULA, NOMBRE, CARRERA, CUATRIMESTRE_ACTUAL, HORA_ENTRADA, HORA_SALIDA, FECHA_FINALIZACION, ID_ENCARGADO FROM ALUMNOS WHERE ID_ENCARGADO = ? ORDER BY MATRICULA ASC";
+                default -> throw new IllegalArgumentException("Filtro inválido: " + filtro);
+            }
+            PreparedStatement ps = conn.prepareStatement(query);
+            if (filtro.equals("Fecha")) {
+                ps.setString(1, valorBusqueda); //Se espera 'YYYY-MM-DD'
+            } else if (filtro.equals("ID encargado")) {
+                ps.setInt(1, Integer.parseInt(valorBusqueda));
+            } else {
+                ps.setString(1, "%" + valorBusqueda + "%");
+            }
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Alumno a = new Alumno();
+                a.setMatricula(rs.getString("MATRICULA"));
+                a.setNombre(rs.getString("NOMBRE"));
+                a.setCarrera(rs.getString("CARRERA"));
+                a.setCuatrimestreActual(rs.getString("CUATRIMESTRE_ACTUAL"));
+                a.setHoraEntrada(rs.getTimestamp("HORA_ENTRADA"));
+                a.setHoraSalida(rs.getTimestamp("HORA_SALIDA"));
+                a.setFechaFinalizacion(rs.getDate("FECHA_FINALIZACION"));
+                lista.add(a);
+            }
+            rs.close();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error de busqueda");
+            error.setHeaderText(null);
+            error.setContentText("Error de formato de busqueda");
+            error.showAndWait();
+        }
+        return lista;
+    }
+
 }
