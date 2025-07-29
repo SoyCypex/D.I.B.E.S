@@ -5,6 +5,7 @@ module mx.edu.utez.proyectointegrador {
     requires ucp;
     requires java.desktop;
     requires jdk.jfr;
+    requires jakarta.mail;
 
 
     opens mx.edu.utez.proyectointegrador to javafx.fxml;

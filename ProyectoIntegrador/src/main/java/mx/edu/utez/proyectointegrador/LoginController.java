@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.concurrent.Task;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import mx.edu.utez.proyectointegrador.modelo.dao.AdminitradorDAO;
 
@@ -53,7 +54,6 @@ public class LoginController {
             spinner.setVisible(false);
             botonIniciar.setDisable(false);
             botonRegresar.setDisable(false);
-
             if (valido) {
                 try {
                     //Cargar nueva ventana
@@ -116,4 +116,20 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void recuperar(ActionEvent event) {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("RecuperarContraAdmin.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Recuperar contraseña Administrador");
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait(); //Espera a que se cierre la ventana
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }

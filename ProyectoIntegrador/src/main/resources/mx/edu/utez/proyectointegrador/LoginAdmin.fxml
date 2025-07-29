@@ -49,5 +49,6 @@
             <Image url="@Images/utezlogo.png" />
          </image></ImageView>
       <ProgressIndicator fx:id="spinner" layoutX="697.0" layoutY="384.0" prefHeight="66.0" prefWidth="71.0" visible="false" />
+      <Button fx:id="botonRecuperar" layoutX="610.0" layoutY="721.0" mnemonicParsing="false" onAction="#recuperar" styleClass="boton-pequeno-verde" text="¿Olvido la contraseña?" />
    </children>
 </AnchorPane>

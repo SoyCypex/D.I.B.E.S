@@ -7,15 +7,17 @@ public class Administrador {
     private String apellidoMaterno;
     private String usuario;
     private String contrasenia;
+    private String correo;
     //Constructores
     public Administrador() {}
-    public Administrador(int idAdmin, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String contrasenia) {
+    public Administrador(int idAdmin, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String contrasenia, String correo) {
         this.idAdmin = idAdmin;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.usuario = usuario;
         this.contrasenia = contrasenia;
+        this.correo = correo;
     }
     //Id
     public int getIdAdmin() {
@@ -58,5 +60,12 @@ public class Administrador {
     }
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
+    }
+    //Correo
+    public String getCorreo() {
+        return correo;
+    }
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 }
