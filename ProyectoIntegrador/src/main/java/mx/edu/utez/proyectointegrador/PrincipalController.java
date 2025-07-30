@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.animation.AnimationTimer;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -71,6 +72,34 @@ public class PrincipalController {
 
     //Abrir superposicion
     //Entrada
+    @FXML
+    void entrada(ActionEvent event) {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ValidarBecarioEntrada.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Registrar hora de entrada");
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait(); //Espera a que se cierre la ventana
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     //Salida
+    @FXML
+    void salida(ActionEvent event) {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ValidarBecarioSalida.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Registrar hora de salida");
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait(); //Espera a que se cierre la ventana
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }

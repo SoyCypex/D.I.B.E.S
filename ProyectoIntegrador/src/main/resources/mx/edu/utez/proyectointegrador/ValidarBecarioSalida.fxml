@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="616.0" prefWidth="662.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.CredencialesController">
+<AnchorPane prefHeight="616.0" prefWidth="662.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.SalidasController">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="527.0" layoutX="31.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1f2f3" height="125.0" layoutX="31.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
@@ -19,19 +19,19 @@
                 <Font size="30.0" />
             </font>
         </TextField>
-        <PasswordField fx:id="contrasena" layoutX="57.0" layoutY="296.0" prefHeight="50.0" prefWidth="550.0" promptText="Contraseña">
+        <PasswordField fx:id="contrasena" layoutX="57.0" layoutY="296.0" prefHeight="50.0" prefWidth="550.0" promptText="Contraseña" styleClass="c">
             <font>
                 <Font name="Arial" size="30.0" />
             </font>
         </PasswordField>
-        <Button fx:id="registrar" layoutX="57.0" layoutY="396.0" mnemonicParsing="false" onAction="#registrar" prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Registrar" textAlignment="CENTER">
+        <Button fx:id="registrar" layoutX="57.0" layoutY="396.0" mnemonicParsing="false"  prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Registrar" textAlignment="CENTER">
             <font>
                 <Font name="Arial Bold" size="40.0" />
             </font>
         </Button>
-      <Button fx:id="recuperar" layoutX="225.0" layoutY="561.0" mnemonicParsing="false" style="-fx-background-color: #13a583; -fx-text-fill: white;" styleClass="boton-pequeno-verde" text="Recuperar contraseña">
-         <font>
-            <Font name="Arial Bold" size="18.0" />
-         </font></Button>
+        <Button fx:id="recuperar" layoutX="225.0" layoutY="561.0" mnemonicParsing="false" onAction="#recuperarContra" style="-fx-background-color: #13a583; -fx-text-fill: white;" styleClass="boton-pequeno-verde" text="Recuperar contraseña">
+            <font>
+                <Font name="Arial Bold" size="18.0" />
+            </font></Button>
     </children>
 </AnchorPane>

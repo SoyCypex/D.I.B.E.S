@@ -1,14 +1,16 @@
 package mx.edu.utez.proyectointegrador;
 
 import javafx.fxml.FXML;
-
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
+import javafx.scene.control.ProgressIndicator;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import mx.edu.utez.proyectointegrador.modelo.dao.AdminitradorDAO;
 import javafx.concurrent.Task;
+import mx.edu.utez.proyectointegrador.modelo.dao.AlumnoDao;
 
-public class RecuperarAdminController {
+public class RecuperarContraController {
     @FXML
     private TextField campoUsuario;
     @FXML
@@ -20,31 +22,32 @@ public class RecuperarAdminController {
     void recuperarContra(ActionEvent event) {
         String usuario = campoUsuario.getText().trim();
         if (usuario.isEmpty()) {
-            mostrarAlerta("Campo vacío", "Por favor ingresa el nombre de usuario.");
+            mostrarAlerta("Campo vacío", "Por favor ingresa tu correo institucional.");
             return;
         }
-        //Desactivar controles mientras se ejecuta
+        // Desactivar controles mientras se ejecuta
         campoUsuario.setDisable(true);
         recuperarBoton.setDisable(true);
         spinner.setVisible(true);
         Task<Boolean> tareaRecuperacion = new Task<>() {
             @Override
             protected Boolean call() {
-                AdminitradorDAO dao = new AdminitradorDAO();
-                String[] datos = dao.obtenerCorreoYContrasena(usuario);
+                AlumnoDao dao = new AlumnoDao();
+                String[] datos = dao.obtenerCredencialesAlumno(usuario); // método que hicimos antes
 
                 if (datos != null) {
                     String correoDestino = datos[0];
                     String contrasena = datos[1];
-                    return dao.enviarCorreo(correoDestino, contrasena);
+                    return dao.enviarCorreo(correoDestino, contrasena); // Debes tener este método también
                 }
-                return null; //Usuario no existe
+                return null; // Usuario no encontrado
             }
         };
         tareaRecuperacion.setOnSucceeded(e -> {
             spinner.setVisible(false);
             campoUsuario.setDisable(false);
             recuperarBoton.setDisable(false);
+
             Boolean resultado = tareaRecuperacion.getValue();
             if (resultado == null) {
                 mostrarAlerta("Usuario no encontrado", "El usuario ingresado no está registrado.");

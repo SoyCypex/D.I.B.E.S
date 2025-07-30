@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="210.0" prefWidth="450.0" stylesheets="@Styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyectointegrador.RecuperarContraController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="130.0" layoutX="10.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="425.0" />
+        <Label layoutX="53.0" layoutY="14.0" text="Recuperar contraseña">
+            <font>
+                <Font name="Arial Bold" size="32.0" />
+            </font>
+        </Label>
+        <Label layoutX="21.0" layoutY="77.0" text="Ingrese matricula:">
+            <font>
+                <Font name="Arial Bold" size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="campoUsuario" layoutX="21.0" layoutY="101.0" styleClass="campo-formulario" />
+        <Button fx:id="recuperarBoton" layoutX="164.0" layoutY="147.0" mnemonicParsing="false" onAction="#recuperarContra" styleClass="boton-azul-compacto" text="Recuperar" />
+        <ProgressIndicator fx:id="spinner" layoutX="195.0" layoutY="92.0" visible="false" />
+    </children>
+</AnchorPane>
