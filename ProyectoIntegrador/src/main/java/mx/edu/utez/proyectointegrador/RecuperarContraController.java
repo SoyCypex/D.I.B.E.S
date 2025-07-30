@@ -22,10 +22,10 @@ public class RecuperarContraController {
     void recuperarContra(ActionEvent event) {
         String usuario = campoUsuario.getText().trim();
         if (usuario.isEmpty()) {
-            mostrarAlerta("Campo vacío", "Por favor ingresa tu correo institucional.");
+            mostrarAlerta("Campo vacío", "Por favor ingresa tu matricula");
             return;
         }
-        // Desactivar controles mientras se ejecuta
+        //Desactivar controles mientras se ejecuta
         campoUsuario.setDisable(true);
         recuperarBoton.setDisable(true);
         spinner.setVisible(true);
@@ -33,14 +33,14 @@ public class RecuperarContraController {
             @Override
             protected Boolean call() {
                 AlumnoDao dao = new AlumnoDao();
-                String[] datos = dao.obtenerCredencialesAlumno(usuario); // método que hicimos antes
+                String[] datos = dao.obtenerCredencialesAlumno(usuario);
 
                 if (datos != null) {
                     String correoDestino = datos[0];
                     String contrasena = datos[1];
-                    return dao.enviarCorreo(correoDestino, contrasena); // Debes tener este método también
+                    return dao.enviarCorreo(correoDestino, contrasena);
                 }
-                return null; // Usuario no encontrado
+                return null;
             }
         };
         tareaRecuperacion.setOnSucceeded(e -> {

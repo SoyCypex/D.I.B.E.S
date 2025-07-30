@@ -26,7 +26,7 @@ public class SalidasController {
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-            stage.setTitle("Recuperar contraseña Administrador");
+            stage.setTitle("Recuperar contraseña");
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait(); //Espera a que se cierre la ventana
         }catch (Exception e){
