@@ -14,7 +14,7 @@
                 <Font name="Arial Bold" size="40.0" />
             </font>
         </Text>
-        <TextField fx:id="usuario" layoutX="57.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="550.0" promptText="Usuario">
+        <TextField fx:id="matricula" layoutX="57.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="550.0" promptText="Matricula">
             <font>
                 <Font size="30.0" />
             </font>
@@ -24,7 +24,7 @@
                 <Font name="Arial" size="30.0" />
             </font>
         </PasswordField>
-        <Button fx:id="registrar" layoutX="57.0" layoutY="396.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Registrar" textAlignment="CENTER">
+        <Button fx:id="registrar" layoutX="57.0" layoutY="396.0" mnemonicParsing="false" onAction="#registrarEntrada" prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #245C93; -fx-text-fill: white;" styleClass="boton-azul" text="Registrar" textAlignment="CENTER">
             <font>
                 <Font name="Arial Bold" size="40.0" />
             </font>
@@ -33,5 +33,6 @@
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font></Button>
+      <ProgressIndicator fx:id="spinner" layoutX="306.0" layoutY="269.0" visible="false" />
     </children>
 </AnchorPane>

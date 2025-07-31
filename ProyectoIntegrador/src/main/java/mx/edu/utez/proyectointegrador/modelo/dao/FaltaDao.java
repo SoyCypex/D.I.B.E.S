@@ -5,6 +5,7 @@ import mx.edu.utez.proyectointegrador.modelo.Falta;
 import mx.edu.utez.proyectointegrador.utils.OracleDatabaseConnectionManager;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -148,5 +149,22 @@ public class FaltaDao {
         }
         return lista;
     }
+
+    public boolean existeFaltaHoy(String matricula, LocalDate fecha) {
+        String query = "SELECT COUNT(*) FROM LISTA_DE_FALTAS WHERE MATRICULA=? AND TRUNC(FECHA_DE_FALTA)=?";
+        try (Connection conn = OracleDatabaseConnectionManager.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, matricula);
+            ps.setDate(2, java.sql.Date.valueOf(fecha));
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
 }

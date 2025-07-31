@@ -12,7 +12,7 @@
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font></Text>
-      <TextField fx:id="matriculaB" layoutX="61.0" layoutY="65.0" prefHeight="15.0" prefWidth="400.0" promptText="Matricula" styleClass="campo-formulario" />
+      <TextField fx:id="matriculaB" editable="false" layoutX="61.0" layoutY="65.0" prefHeight="15.0" prefWidth="400.0" promptText="Matricula" styleClass="campo-formulario" />
       <Button fx:id="modificar" layoutX="200.0" layoutY="739.0" mnemonicParsing="false" onAction="#actualizarBecario" prefHeight="33.0" prefWidth="122.0" style="-fx-background-color: #13a583; -fx-text-fill: WHITE;" styleClass="boton-pequeno-verde" text="Modificar">
          <font>
             <Font name="Arial Bold" size="18.0" />

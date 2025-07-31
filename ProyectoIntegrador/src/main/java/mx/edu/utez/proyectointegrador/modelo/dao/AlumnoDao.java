@@ -310,4 +310,32 @@ public class AlumnoDao {
         }
     }
 
+    public Alumno obtenerAlumnoPorCredenciales(String matricula, String contrasenia) {
+        String query = "SELECT * FROM ALUMNOS WHERE MATRICULA = ? AND CONTRASENIA = ?";
+        try (Connection conn = OracleDatabaseConnectionManager.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, matricula);
+            ps.setString(2, contrasenia);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Alumno alumno = new Alumno();
+                alumno.setMatricula(matricula);
+                //HORA_ENTRADA
+                Timestamp tsEntrada = rs.getTimestamp("HORA_ENTRADA");
+                if (tsEntrada != null) {
+                    alumno.setHoraEntrada(tsEntrada);
+                }
+                //HORA_SALIDA
+                Timestamp tsSalida = rs.getTimestamp("HORA_SALIDA");
+                if (tsSalida != null) {
+                    alumno.setHoraSalida(tsSalida);
+                }
+                return alumno;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

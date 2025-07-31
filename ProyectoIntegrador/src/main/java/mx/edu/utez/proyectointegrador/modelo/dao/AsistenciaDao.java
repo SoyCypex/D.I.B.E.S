@@ -5,6 +5,7 @@ import mx.edu.utez.proyectointegrador.modelo.Asistencia;
 import mx.edu.utez.proyectointegrador.utils.OracleDatabaseConnectionManager;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -151,6 +152,82 @@ public class AsistenciaDao {
             error.showAndWait();
         }
         return lista;
+    }
+
+    public boolean yaExisteAsistenciaHoy(String matricula, LocalDate fecha) {
+        String query = "SELECT COUNT(*) FROM LISTA_DE_ASISTENCIA WHERE MATRICULA = ? AND TRUNC(FECHA) = ?";
+        try (Connection conn = OracleDatabaseConnectionManager.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, matricula);
+            stmt.setDate(2, java.sql.Date.valueOf(fecha));
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean registrarHoraSalida(String matricula, Timestamp horaSalida) {
+        String sql = "UPDATE LISTA_DE_ASISTENCIA SET HORA_SALIDA = ? WHERE MATRICULA = ? AND TRUNC(FECHA) = TRUNC(SYSDATE)";
+        try (Connection conn = OracleDatabaseConnectionManager.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setTimestamp(1, horaSalida);
+            ps.setString(2, matricula);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Asistencia buscarAsistenciaPorMatriculaYFecha(String matricula, Date fecha) {
+        String query = "SELECT * FROM LISTA_DE_ASISTENCIA WHERE MATRICULA = ? AND TRUNC(FECHA) = ?";
+        try (Connection conn = OracleDatabaseConnectionManager.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, matricula);
+            ps.setDate(2, fecha);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Asistencia a = new Asistencia();
+                a.setNumRegistro(rs.getInt("NUM_REGISTRO"));
+                a.setMatricula(rs.getString("MATRICULA"));
+                a.setFecha(rs.getDate("FECHA"));
+                a.setHoraEntrada(rs.getTimestamp("HORA_ENTRADA"));
+                a.setHoraSalida(rs.getTimestamp("HORA_SALIDA"));
+                return a;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public boolean actualizarHoraSalida(Asistencia asistencia) {
+        String query = "UPDATE LISTA_DE_ASISTENCIA SET HORA_SALIDA=? WHERE NUM_REGISTRO=?";
+        try (Connection conn = OracleDatabaseConnectionManager.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setTimestamp(1, asistencia.getHoraSalida());
+            ps.setInt(2, asistencia.getNumRegistro());
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean eliminarAsistenciaPorId(int idAsistencia) {
+        String query = "DELETE FROM LISTA_DE_ASISTENCIA WHERE NUM_REGISTRO=?";
+        try (Connection conn = OracleDatabaseConnectionManager.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setInt(1, idAsistencia);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }
