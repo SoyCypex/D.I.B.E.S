@@ -91,7 +91,7 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Button>
-      <TextField fx:id="contrasenia" layoutX="616.0" layoutY="425.0" prefHeight="35.0" prefWidth="400.0" promptText="Minimo 15 caracteres" styleClass="campo-formulario" />
+      <TextField fx:id="contrasenia" layoutX="616.0" layoutY="425.0" prefHeight="35.0" prefWidth="400.0" promptText="No la olvides" styleClass="campo-formulario" />
       <Text layoutX="615.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cree una contraseña:">
          <font>
             <Font name="Arial Bold" size="15.0" />

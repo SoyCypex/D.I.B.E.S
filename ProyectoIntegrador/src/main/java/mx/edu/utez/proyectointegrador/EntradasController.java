@@ -35,12 +35,12 @@ public class EntradasController {
     @FXML
     private ProgressIndicator spinner;
 
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(titulo);
-        alert.setHeaderText(null);
-        alert.setContentText(mensaje);
-        alert.showAndWait();
+    private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
+        Alert alerta = new Alert(tipo);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
     }
 
     @FXML
@@ -128,7 +128,7 @@ public class EntradasController {
             contrasena.setDisable(false);
             registrar.setDisable(false);
             String resultado = tareaRegistro.getValue();
-            mostrarAlerta("Resultado", resultado);
+            mostrarAlerta("Resultado", resultado, Alert.AlertType.INFORMATION);
             if (resultado.startsWith("Entrada registrada")) {
                 cerrarVentana(); //solo si fue exitosa
             }
@@ -138,7 +138,7 @@ public class EntradasController {
             matricula.setDisable(false);
             contrasena.setDisable(false);
             registrar.setDisable(false);
-            mostrarAlerta("Error", "Ocurrió un error inesperado. Revisa tu conexión.");
+            mostrarAlerta("Error", "Ocurrió un error inesperado. Revisa tu conexión.", Alert.AlertType.ERROR);
         });
         new Thread(tareaRegistro).start();
     }
